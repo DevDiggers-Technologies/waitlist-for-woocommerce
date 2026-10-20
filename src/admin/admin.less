@@ -1,0 +1,314 @@
+@ddwcwl-primary: #0256ff;
+
+// Status labels: soft tinted marks, 6px corners like the rest of the DevDiggers family. No pills.
+.ddwcwl-status {
+	display: inline-block;
+	padding: 2px 10px;
+	border-radius: 6px;
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 20px;
+	background: #f1f2f4;
+	color: #3c434a;
+
+	&.ddwcwl-status-waiting {
+		background: var( --ddfw-tab-background-color, #eef3ff );
+		color: var( --ddfw-primary-color, #0256ff );
+	}
+
+	&.ddwcwl-status-notified {
+		background: #f3f0ff;
+		color: #5b3fd1;
+	}
+
+	&.ddwcwl-status-unsubscribed {
+		background: #f1f2f4;
+		color: #646970;
+	}
+}
+
+// Stock: the framework success and error colors.
+.ddwcwl-stock {
+	font-weight: 600;
+
+	&.ddwcwl-instock {
+		color: var( --ddfw-success-color, #01cc44 );
+	}
+
+	&.ddwcwl-outofstock {
+		color: var( --ddfw-error-color, #ff4800 );
+	}
+}
+
+.ddwcwl-muted {
+	color: #8c8f94;
+}
+
+.ddwcwl-product-cell {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+
+	img {
+		width: 40px;
+		height: 40px;
+		object-fit: cover;
+		border-radius: 4px;
+		flex: none;
+	}
+}
+
+.ddwcwl-guest {
+	color: #8c8f94;
+}
+
+.wp-list-table {
+	.column-product,
+	.column-email {
+		width: 30%;
+	}
+
+	.column-status,
+	.column-waiting,
+	.column-notified {
+		width: 110px;
+	}
+}
+
+.ddwcwl-add-subscriber {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+	margin: 12px 0;
+	padding: 16px;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 10px;
+
+	&[hidden] {
+		display: none;
+	}
+
+	input[type="email"] {
+		min-width: 260px;
+	}
+
+	select,
+	.select2-container {
+		min-width: 320px;
+	}
+}
+
+.ddwcwl-active-filter {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	line-height: 30px;
+}
+
+// Dashboard widgets.
+.ddwcwl-dash-items {
+	display: flex;
+	flex-direction: column;
+}
+
+.ddwcwl-dash-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	padding: 10px 0;
+	border-bottom: 1px solid #f0f0f1;
+
+	&:last-child {
+		border-bottom: 0;
+	}
+}
+
+.ddwcwl-dash-item-info {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	min-width: 0;
+	color: inherit;
+	text-decoration: none;
+
+	img {
+		width: 36px;
+		height: 36px;
+		object-fit: cover;
+		border-radius: 4px;
+		flex: none;
+	}
+
+	> span {
+		display: flex;
+		flex-direction: column;
+		min-width: 0;
+	}
+
+	strong {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	small {
+		color: #8c8f94;
+	}
+}
+
+
+
+.devdiggers-wrap .ddwcwl-widget-empty .ddfw-empty-state {
+	margin: 24px auto;
+	padding: 24px 12px;
+	border: 0;
+
+	h2 {
+		font-size: 14px;
+	}
+
+	p {
+		font-size: 13px;
+	}
+}
+
+// Emails screen.
+.ddwcwl-email-toolbar {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+	margin: 0 0 8px;
+	padding: 12px 16px;
+	border: 1px solid #e5e7eb;
+	border-radius: 10px;
+	background: #f9fafb;
+
+	.description {
+		flex-basis: 100%;
+		margin: 0;
+	}
+
+	input[type="email"] {
+		min-width: 240px;
+	}
+}
+
+.ddwcwl-test-email {
+	display: inline-flex;
+	gap: 8px;
+}
+
+.ddwcwl-test-result {
+	font-weight: 500;
+
+	&.ddwcwl-success {
+		color: #15803d;
+	}
+
+	&.ddwcwl-error {
+		color: var( --ddfw-error-color, #ff4800 );
+	}
+}
+
+.ddwcwl-placeholders {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	max-width: 720px;
+}
+
+.ddwcwl-placeholder {
+	padding: 4px 8px;
+	border: 1px solid #dcdcde;
+	border-radius: 6px;
+	background: #fff;
+	color: #1d2327;
+	font-family: Menlo, Consolas, monospace;
+	font-size: 12px;
+	cursor: pointer;
+	transition: border-color 0.15s, color 0.15s;
+
+	&:hover,
+	&:focus-visible {
+		border-color: var( --ddfw-primary-color, #0256ff );
+		color: var( --ddfw-primary-color, #0256ff );
+	}
+}
+
+.ddwcwl-preview-dialog {
+	width: min( 760px, calc( 100vw - 48px ) );
+	height: min( 860px, calc( 100vh - 96px ) );
+	padding: 0;
+	border: 0;
+	border-radius: 12px;
+	box-shadow: 0 24px 64px rgba( 15, 23, 42, 0.25 );
+	overflow: hidden;
+
+	&[open] {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&::backdrop {
+		background: rgba( 15, 23, 42, 0.45 );
+	}
+
+	iframe {
+		flex: 1;
+		width: 100%;
+		border: 0;
+		background: #f7f7f7;
+	}
+}
+
+.ddwcwl-preview-close {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	padding: 0;
+	border: 0;
+	border-radius: 8px;
+	background: transparent;
+	color: #50575e;
+	cursor: pointer;
+
+	&:hover,
+	&:focus-visible {
+		background: #f0f0f1;
+		color: #1d2327;
+	}
+}
+
+.ddwcwl-preview-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 12px 16px;
+	border-bottom: 1px solid #e5e7eb;
+}
+
+// Locked Pro actions: give the framework's absolutely positioned PRO tag a box to sit on.
+.ddwcwl-locked-action,
+.ddwcwl-locked-column {
+	display: inline-block;
+}
+
+.ddwcwl-locked-action {
+	margin-left: 4px;
+	vertical-align: top;
+
+	.page-title-action {
+		top: 0;
+		margin-left: 0;
+	}
+}
+
+.ddwcwl-locked-column {
+	padding-right: 28px;
+}

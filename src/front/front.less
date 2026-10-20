@@ -1,0 +1,584 @@
+// Waiting list storefront UI.
+// Design read: Apple-style product page notify module. Quiet surface, hairlines, one accent,
+// stroke icons without tiles, 10px field radius, 8px controls, motion only for state feedback.
+
+@ddwcwl-success: #01cc44; // DevDiggers framework success.
+@ddwcwl-error: #ff4800; // DevDiggers framework error.
+@ddwcwl-ease: cubic-bezier( 0.16, 1, 0.3, 1 );
+
+.ddwcwl-waiting-list,
+.ddwcwl-account-list {
+	--ddwcwl-accent: var( --ddwcwl-button-bg, #0256ff );
+	--ddwcwl-on-accent: var( --ddwcwl-button-color, #fff );
+	--ddwcwl-surface: rgba( 127, 127, 127, 0.05 );
+	--ddwcwl-field: rgba( 255, 255, 255, 0.9 );
+	--ddwcwl-line: rgba( 127, 127, 127, 0.22 );
+	--ddwcwl-muted: rgba( 127, 127, 127, 0.95 );
+	--ddwcwl-radius: 12px;
+	--ddwcwl-radius-sm: 8px;
+}
+
+@supports ( color: color-mix( in srgb, red 10%, transparent ) ) {
+	.ddwcwl-waiting-list,
+	.ddwcwl-account-list {
+		--ddwcwl-surface: color-mix( in srgb, currentColor 3.5%, transparent );
+		--ddwcwl-field: color-mix( in srgb, Canvas 92%, transparent );
+		--ddwcwl-line: color-mix( in srgb, currentColor 13%, transparent );
+		--ddwcwl-muted: color-mix( in srgb, currentColor 60%, transparent );
+	}
+}
+
+.ddwcwl-svg {
+	display: block;
+	flex: none;
+}
+
+.ddwcwl-waiting-list {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+	margin: 28px 0;
+	padding: 24px;
+	border-radius: var( --ddwcwl-radius );
+	background: var( --ddwcwl-surface );
+	font-size: 15px;
+	line-height: 1.47;
+	letter-spacing: -0.003em;
+	-webkit-font-smoothing: antialiased;
+	transition: opacity 0.2s @ddwcwl-ease;
+
+	&[hidden] {
+		display: none;
+	}
+
+	&.ddwcwl-loading {
+		opacity: 0.55;
+		pointer-events: none;
+	}
+
+	// Themes style summary paragraphs and lists; the module owns its rhythm.
+	p,
+	ul,
+	li,
+	form {
+		margin: 0 !important;
+		padding: 0;
+	}
+
+	[hidden] {
+		display: none !important;
+	}
+}
+
+// Header: icon is a plain stroke in the accent, no tile.
+.ddwcwl-head {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+}
+
+.ddwcwl-head-icon {
+	color: var( --ddwcwl-accent );
+
+	.ddwcwl-svg {
+		width: 24px;
+		height: 24px;
+		stroke-width: 1.5;
+	}
+}
+
+.ddwcwl-head-text {
+	display: grid;
+	gap: 4px;
+	min-width: 0;
+}
+
+.ddwcwl-title,
+.ddwcwl-done-title {
+	font-size: 17px;
+	font-weight: 600;
+	line-height: 1.3;
+	letter-spacing: -0.015em;
+}
+
+.ddwcwl-desc {
+	color: var( --ddwcwl-muted );
+	font-size: 14px;
+}
+
+// Facts: one quiet line each, separated by a hairline from the header.
+.ddwcwl-facts {
+	display: grid;
+	gap: 10px;
+	padding-top: 16px !important;
+	border-top: 1px solid var( --ddwcwl-line );
+	list-style: none !important;
+}
+
+.ddwcwl-fact {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+	color: var( --ddwcwl-muted );
+	font-size: 14px;
+
+	.ddwcwl-svg {
+		width: 18px;
+		height: 18px;
+		margin-top: 1px;
+		stroke-width: 1.5;
+	}
+
+	strong {
+		color: inherit;
+		font-weight: 600;
+		filter: contrast( 1.7 );
+	}
+}
+
+// Messages.
+.ddwcwl-notice-area {
+	.woocommerce-message,
+	.woocommerce-error,
+	.woocommerce-info {
+		margin: 0 !important;
+	}
+}
+
+.ddwcwl-message {
+	padding: 10px 14px;
+	border-radius: var( --ddwcwl-radius-sm );
+	font-size: 14px;
+}
+
+.ddwcwl-message-error {
+	background: fade( @ddwcwl-error, 8% );
+	color: darken( @ddwcwl-error, 14% );
+}
+
+.ddwcwl-message-success {
+	background: fade( @ddwcwl-success, 10% );
+	color: darken( @ddwcwl-success, 20% );
+}
+
+.ddwcwl-custom-notice {
+	padding: 12px 14px;
+}
+
+// Form.
+.ddwcwl-join-form {
+	display: grid;
+	gap: 10px;
+}
+
+// Email and button share one field, like a search bar.
+.ddwcwl-combo {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	min-height: 52px;
+	padding: 5px 5px 5px 14px;
+	border: 1px solid var( --ddwcwl-line );
+	border-radius: 10px;
+	background: var( --ddwcwl-field );
+	transition: border-color 0.2s @ddwcwl-ease;
+
+	> .ddwcwl-svg {
+		width: 18px;
+		height: 18px;
+		color: var( --ddwcwl-muted );
+		stroke-width: 1.5;
+	}
+
+	&:focus-within {
+		border-color: var( --ddwcwl-accent );
+	}
+
+	.ddwcwl-email {
+		flex: 1 1 auto;
+		min-width: 0;
+		height: 40px;
+		margin: 0;
+		padding: 0;
+		border: 0 !important;
+		background: transparent !important;
+		color: inherit;
+		font: inherit;
+		box-shadow: none !important;
+		outline: none;
+
+		&::placeholder {
+			color: var( --ddwcwl-muted );
+			opacity: 1;
+		}
+	}
+}
+
+.ddwcwl-waiting-list .ddwcwl-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	min-height: 40px;
+	margin: 0;
+	padding: 0 20px;
+	border: 0;
+	border-radius: var( --ddwcwl-radius-sm );
+	background: var( --ddwcwl-accent );
+	color: var( --ddwcwl-on-accent );
+	font: inherit;
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: -0.01em;
+	line-height: 1;
+	text-decoration: none;
+	white-space: nowrap;
+	cursor: pointer;
+	box-shadow: none;
+	transition: transform 0.15s @ddwcwl-ease, filter 0.2s @ddwcwl-ease;
+
+	.ddwcwl-svg {
+		width: 18px;
+		height: 18px;
+		stroke-width: 1.75;
+	}
+
+	&:hover,
+	&:focus-visible {
+		background: var( --ddwcwl-accent );
+		color: var( --ddwcwl-on-accent );
+		filter: brightness( 1.08 );
+	}
+
+	&:focus-visible {
+		outline: 2px solid var( --ddwcwl-accent );
+		outline-offset: 2px;
+	}
+
+	&:active {
+		transform: scale( 0.97 );
+	}
+
+	&:disabled {
+		opacity: 0.6;
+	}
+}
+
+.ddwcwl-waiting-list .ddwcwl-button-block {
+	width: 100%;
+	min-height: 48px;
+	border-radius: 10px;
+}
+
+.ddwcwl-note {
+	color: var( --ddwcwl-muted );
+	font-size: 13px;
+
+	strong {
+		font-weight: 500;
+	}
+}
+
+.ddwcwl-consent {
+	color: var( --ddwcwl-muted );
+	font-size: 13px;
+
+	label {
+		display: flex;
+		align-items: flex-start;
+		gap: 8px;
+		cursor: pointer;
+	}
+
+	input {
+		margin: 3px 0 0;
+		accent-color: var( --ddwcwl-accent );
+	}
+}
+
+.ddwcwl-hp {
+	position: absolute !important;
+	left: -9999px;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+// Joined: the module becomes one calm confirmation.
+.ddwcwl-done {
+	display: none;
+	align-items: flex-start;
+	gap: 12px;
+	outline: none;
+}
+
+.ddwcwl-done-icon {
+	flex: none;
+	color: darken( @ddwcwl-success, 8% );
+}
+
+.ddwcwl-done-text {
+	display: grid;
+	gap: 4px;
+	flex: 1;
+	min-width: 0;
+	padding-top: 2px;
+}
+
+.ddwcwl-position,
+.ddwcwl-done-message {
+	color: var( --ddwcwl-muted );
+	font-size: 14px;
+
+	&:empty {
+		display: none;
+	}
+
+	strong {
+		color: inherit;
+		filter: contrast( 1.7 );
+	}
+}
+
+.ddwcwl-leave-form {
+	margin-top: 8px !important;
+}
+
+.ddwcwl-link-button {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: none;
+	color: var( --ddwcwl-accent );
+	font: inherit;
+	font-size: 14px;
+	cursor: pointer;
+
+	&:hover,
+	&:focus-visible {
+		background: none;
+		color: var( --ddwcwl-accent );
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+}
+
+.ddwcwl-joined {
+	.ddwcwl-head,
+	.ddwcwl-join-form,
+	.ddwcwl-fact-count {
+		display: none !important;
+	}
+
+	.ddwcwl-done {
+		display: flex;
+		order: -1;
+		animation: ddwcwl-in 0.4s @ddwcwl-ease both;
+	}
+
+	.ddwcwl-done-ring {
+		stroke-dasharray: 77;
+		stroke-dashoffset: 77;
+		animation: ddwcwl-draw 0.5s @ddwcwl-ease 0.05s forwards;
+	}
+
+	.ddwcwl-done-tick {
+		stroke-dasharray: 16;
+		stroke-dashoffset: 16;
+		animation: ddwcwl-draw 0.35s @ddwcwl-ease 0.4s forwards;
+	}
+}
+
+@keyframes ddwcwl-in {
+	from {
+		opacity: 0;
+		transform: translateY( 4px );
+	}
+}
+
+@keyframes ddwcwl-draw {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
+@media ( max-width: 420px ) {
+	.ddwcwl-waiting-list {
+		padding: 20px;
+	}
+
+	.ddwcwl-combo {
+		flex-wrap: wrap;
+		padding: 5px;
+
+		> .ddwcwl-svg {
+			display: none;
+		}
+
+		.ddwcwl-email {
+			padding: 0 10px;
+		}
+
+		.ddwcwl-button {
+			width: 100%;
+			min-height: 44px;
+		}
+	}
+}
+
+@media ( prefers-reduced-motion: reduce ) {
+	.ddwcwl-joined .ddwcwl-done,
+	.ddwcwl-joined .ddwcwl-done-ring,
+	.ddwcwl-joined .ddwcwl-done-tick {
+		animation: none;
+		stroke-dashoffset: 0;
+	}
+}
+
+// My Account.
+.ddwcwl-account-list {
+	.ddwcwl-account-toolbar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 12px;
+		margin-bottom: 16px;
+
+		h3 {
+			margin: 0;
+			font-size: 1.1em;
+		}
+	}
+
+	.ddwcwl-account-search {
+		display: flex;
+		gap: 8px;
+
+		input {
+			min-height: 40px;
+			padding: 0 12px;
+			border: 1px solid var( --ddwcwl-line );
+			border-radius: var( --ddwcwl-radius-sm );
+			background: transparent;
+			color: inherit;
+		}
+	}
+
+	.ddwcwl-account-items {
+		display: grid;
+		gap: 12px;
+		margin: 0 !important;
+		padding: 0 !important;
+		list-style: none !important;
+	}
+
+	.ddwcwl-account-item {
+		display: grid;
+		grid-template-columns: 64px 1fr auto;
+		align-items: center;
+		gap: 16px;
+		margin: 0 !important;
+		padding: 14px;
+		border: 1px solid var( --ddwcwl-line );
+		border-radius: var( --ddwcwl-radius );
+
+		img {
+			display: block;
+			width: 64px;
+			height: 64px;
+			object-fit: cover;
+			border-radius: var( --ddwcwl-radius-sm );
+		}
+
+		p {
+			margin: 0;
+		}
+	}
+
+	.ddwcwl-account-name {
+		font-weight: 600;
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.ddwcwl-account-meta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 4px 16px;
+		margin-top: 4px !important;
+		color: var( --ddwcwl-muted );
+		font-size: 14px;
+	}
+
+	.ddwcwl-stock {
+		font-weight: 600;
+
+		&.ddwcwl-instock {
+			color: @ddwcwl-success;
+		}
+
+		&.ddwcwl-outofstock {
+			color: @ddwcwl-error;
+		}
+	}
+
+	.ddwcwl-account-actions {
+		display: flex;
+		gap: 8px;
+
+		form {
+			margin: 0;
+		}
+	}
+
+	.ddwcwl-account-empty {
+		display: grid;
+		justify-items: center;
+		gap: 8px;
+		padding: 48px 24px;
+		border: 1px dashed var( --ddwcwl-line );
+		border-radius: var( --ddwcwl-radius );
+		text-align: center;
+
+		p {
+			margin: 0;
+			max-width: 42ch;
+			color: var( --ddwcwl-muted );
+		}
+
+		.ddwcwl-account-empty-title {
+			color: inherit;
+			font-size: 17px;
+			font-weight: 600;
+		}
+
+		.ddwcwl-head-icon {
+			margin-bottom: 4px;
+
+			.ddwcwl-svg {
+				width: 32px;
+				height: 32px;
+			}
+		}
+	}
+
+	@media ( max-width: 600px ) {
+		.ddwcwl-account-toolbar {
+			flex-direction: column;
+			align-items: stretch;
+		}
+
+		.ddwcwl-account-item {
+			grid-template-columns: 56px 1fr;
+
+			img {
+				width: 56px;
+				height: 56px;
+			}
+		}
+
+		.ddwcwl-account-actions {
+			grid-column: 1 / -1;
+		}
+	}
+}
