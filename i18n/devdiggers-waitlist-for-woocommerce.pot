@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: DevDiggers Waitlist for WooCommerce 1.0.0\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/devdiggers-waitlist-for-woocommerce\n"
-"POT-Creation-Date: 2026-10-20 14:22:06+00:00\n"
+"POT-Creation-Date: 2026-10-20 19:15:14+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1345,7 +1345,7 @@ msgid "New Signups"
 msgstr ""
 
 #: templates/admin/dashboard/dashboard-template.php:92
-#: templates/admin/dashboard/dashboard-template.php:112
+#: templates/admin/dashboard/dashboard-template.php:111
 msgid "Emails Sent"
 msgstr ""
 
@@ -1357,99 +1357,99 @@ msgstr ""
 msgid "Waiting List Activity"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:107
+#: templates/admin/dashboard/dashboard-template.php:106
 msgid "Signups"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:117
+#: templates/admin/dashboard/dashboard-template.php:116
 msgid "No waiting list activity in this period"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:118
+#: templates/admin/dashboard/dashboard-template.php:117
 msgid "Signups and restock emails will be charted here."
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:124
+#: templates/admin/dashboard/dashboard-template.php:122
 msgid "Subscribers by Status"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:133
+#: templates/admin/dashboard/dashboard-template.php:129
 #: templates/admin/subscribers/subscribers-list-template.php:352
 msgid "No subscribers yet"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:134
+#: templates/admin/dashboard/dashboard-template.php:130
 msgid "Statuses appear once customers join a waiting list."
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:139
-msgid "Recovered Sales"
-msgstr ""
-
-#: templates/admin/dashboard/dashboard-template.php:144
+#: templates/admin/dashboard/dashboard-template.php:136
 msgid "Most Wanted Products"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:149
+#: templates/admin/dashboard/dashboard-template.php:141
 msgid "Ready to Sell"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:154
+#: templates/admin/dashboard/dashboard-template.php:146
 msgid "Recent Signups"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:172
+#: templates/admin/dashboard/dashboard-template.php:151
+msgid "Recovered Sales"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:169
 msgid "See exactly how much revenue your waiting list brings back"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:173
+#: templates/admin/dashboard/dashboard-template.php:170
 msgid ""
 "Pro links every order to the restock email that won it, so you know which "
 "products to reorder first."
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:175
+#: templates/admin/dashboard/dashboard-template.php:172
 msgid "Recovered orders and revenue, compared with the previous period"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:176
+#: templates/admin/dashboard/dashboard-template.php:173
 msgid "Email to click to purchase funnel"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:177
+#: templates/admin/dashboard/dashboard-template.php:174
 msgid "Revenue per product on the Products screen"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:207
+#: templates/admin/dashboard/dashboard-template.php:204
 #. translators: %s: waiting customers.
 msgid "%s waiting"
 msgid_plural "%s waiting"
 msgstr[0] ""
 msgstr[1] ""
 
-#: templates/admin/dashboard/dashboard-template.php:213
+#: templates/admin/dashboard/dashboard-template.php:210
 msgid "Email now"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:227
+#: templates/admin/dashboard/dashboard-template.php:224
 msgid "Nobody is waiting right now. Your most requested products will rank here."
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:236
+#: templates/admin/dashboard/dashboard-template.php:233
 msgid ""
 "All caught up. In-stock products with customers still waiting appear here, "
 "ready to email."
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:246
+#: templates/admin/dashboard/dashboard-template.php:243
 msgid "New signups show up here the moment a customer joins."
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:246
+#: templates/admin/dashboard/dashboard-template.php:243
 msgid "No signups yet"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:283
+#: templates/admin/dashboard/dashboard-template.php:280
 msgid "Nothing here yet"
 msgstr ""
 
