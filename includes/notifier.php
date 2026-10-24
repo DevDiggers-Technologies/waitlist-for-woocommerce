@@ -131,13 +131,17 @@ if ( ! class_exists( 'DDWCWL_Notifier' ) ) {
 			}
 
 			// Mark first, so a slow mailer or a parallel batch can never email the same person twice.
-			$this->subscribers->update(
-				$subscriber->id,
-				[
-					'status'      => 'notified',
-					'notified_at' => current_time( 'mysql' ),
-				]
-			);
+			$changes = [
+				'status'      => 'notified',
+				'notified_at' => current_time( 'mysql' ),
+			];
+
+			$this->subscribers->update( $subscriber->id, $changes );
+
+			// Keep the row in memory in step, so the email and the ddwcwl_subscriber_notified listeners see its new status.
+			foreach ( $changes as $key => $value ) {
+				$subscriber->$key = $value;
+			}
 
 			$emails = WC()->mailer()->get_emails();
 

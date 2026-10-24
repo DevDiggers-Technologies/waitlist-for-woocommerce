@@ -37,6 +37,10 @@ if ( ! class_exists( 'DDWCWL_Front_Hooks' ) ) {
 			add_action( 'wp_loaded', [ $function_handler, 'ddwcwl_handle_form_post' ] );
 			add_action( 'template_redirect', [ $function_handler, 'ddwcwl_handle_email_action' ] );
 
+			// "Log in to get notified" sends the shopper back to the product after logging in or registering.
+			add_filter( 'woocommerce_login_redirect', [ $function_handler, 'ddwcwl_login_redirect' ], 20 );
+			add_filter( 'woocommerce_registration_redirect', [ $function_handler, 'ddwcwl_login_redirect' ], 20 );
+
 			add_shortcode( $function_handler->ddwcwl_validate_shortcode( $ddwcwl_waiting_list['waiting_list_template_shortcode'] ), [ $function_handler, 'ddwcwl_get_waiting_list_template_shortcode_content' ] );
 		}
 	}

@@ -36,6 +36,11 @@ if ( ! class_exists( 'DDWCWL_File_Handler' ) ) {
 			if ( self::ddwcwl_is_active() ) {
 				new Front\DDWCWL_Front_Hooks();
 				new Front\DDWCWL_Front_Ajax_Hooks();
+			} else {
+				global $ddwcwl_waiting_list;
+
+				// Switched off: the shortcode still has to be registered, or pages print its raw tag.
+				add_shortcode( ( new Front\DDWCWL_Front_Functions() )->ddwcwl_validate_shortcode( $ddwcwl_waiting_list['waiting_list_template_shortcode'] ), '__return_empty_string' );
 			}
 		}
 

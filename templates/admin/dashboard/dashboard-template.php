@@ -120,7 +120,8 @@ if ( ! class_exists( 'DDWCWL_Dashboard_Template' ) ) {
 						[
 							'id'         => 'ddwcwl-status-mix',
 							'title'      => esc_html__( 'Subscribers by Status', 'devdiggers-waitlist-for-woocommerce' ),
-							'date_label' => $this->data['date_range']['label'],
+							// Everyone's status today, whatever the date range: the label must not claim the range.
+							'date_label' => esc_html__( 'All time', 'devdiggers-waitlist-for-woocommerce' ),
 							'type'       => 'doughnut',
 							'data'       => $status,
 							'label_key'  => 'label',

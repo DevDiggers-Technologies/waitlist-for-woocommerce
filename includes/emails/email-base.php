@@ -84,7 +84,7 @@ if ( ! class_exists( 'DDWCWL_Email_Base' ) ) {
 					'title'       => esc_html__( 'Content', 'devdiggers-waitlist-for-woocommerce' ),
 					'type'        => 'title',
 					/* translators: %s: link to the plugin Emails screen. */
-					'description' => sprintf( esc_html__( 'Turn this email on or off and edit its subject, heading and content under %s.', 'devdiggers-waitlist-for-woocommerce' ), '<a href="' . esc_url( admin_url( 'admin.php?page=' . DDWCWL_DASHBOARD_PAGE . '&menu=emails&tab=' . str_replace( '_', '-', $this->ddwcwl_type ) ) ) . '">' . esc_html__( 'Waiting List > Emails', 'devdiggers-waitlist-for-woocommerce' ) . '</a>' ),
+					'description' => sprintf( esc_html__( 'Turn this email on or off and edit its subject, heading and content under %s.', 'devdiggers-waitlist-for-woocommerce' ), '<a href="' . esc_url( admin_url( 'admin.php?page=' . DDWCWL_DASHBOARD_PAGE . '&menu=emails&tab=' . str_replace( '_', '-', $this->ddwcwl_type ) ) ) . '">' . esc_html__( 'Waitlist > Emails', 'devdiggers-waitlist-for-woocommerce' ) . '</a>' ),
 				],
 				'email_type'    => $this->form_fields['email_type'],
 			];

@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: DevDiggers Waitlist for WooCommerce 1.0.0\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/devdiggers-waitlist-for-woocommerce\n"
-"POT-Creation-Date: 2026-10-20 19:15:14+00:00\n"
+"POT-Creation-Date: 2026-10-24 14:05:07+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -90,29 +90,29 @@ msgstr ""
 msgid "You do not have permission to manage the waiting list."
 msgstr ""
 
-#: includes/admin/admin-functions.php:396
+#: includes/admin/admin-functions.php:399
 msgid "You do not have permission to preview emails."
 msgstr ""
 
-#: includes/admin/admin-functions.php:406
+#: includes/admin/admin-functions.php:409
 msgid "Add at least one product to preview waiting list emails."
 msgstr ""
 
-#: includes/admin/admin-functions.php:421
+#: includes/admin/admin-functions.php:424
 msgid "You do not have permission to send test emails."
 msgstr ""
 
-#: includes/admin/admin-functions.php:432
+#: includes/admin/admin-functions.php:435
 msgid "Enter a valid email address."
 msgstr ""
 
-#: includes/admin/admin-functions.php:436
+#: includes/admin/admin-functions.php:439
 msgid ""
 "The mail server did not accept the email. Check your SMTP settings, then "
 "try again."
 msgstr ""
 
-#: includes/admin/admin-functions.php:440
+#: includes/admin/admin-functions.php:443
 #. translators: %s: recipient email.
 msgid "Test email sent to %s."
 msgstr ""
@@ -276,7 +276,7 @@ msgstr ""
 msgid "Shortcodes"
 msgstr ""
 
-#: includes/admin-dashboard.php:152 includes/admin-dashboard.php:414
+#: includes/admin-dashboard.php:152 includes/admin-dashboard.php:421
 msgid "Subscribers"
 msgstr ""
 
@@ -470,99 +470,105 @@ msgstr ""
 msgid "Please choose a product and enter a valid email address."
 msgstr ""
 
-#: includes/admin-dashboard.php:397
+#: includes/admin-dashboard.php:399
 msgid ""
 "Nothing queued. Restock emails are only sent for in-stock products that "
 "have waiting customers."
 msgstr ""
 
-#: includes/admin-dashboard.php:415
+#: includes/admin-dashboard.php:401
+msgid ""
+"Nobody was emailed. Back in stock emails are only sent while the product is "
+"in stock."
+msgstr ""
+
+#: includes/admin-dashboard.php:422
 msgid "Add Subscriber"
 msgstr ""
 
-#: includes/admin-dashboard.php:416
+#: includes/admin-dashboard.php:423
 msgid "Import CSV"
 msgstr ""
 
-#: includes/admin-dashboard.php:417
+#: includes/admin-dashboard.php:424
 msgid "Export CSV"
 msgstr ""
 
-#: includes/admin-dashboard.php:426
+#: includes/admin-dashboard.php:433
 msgid "Email"
 msgstr ""
 
-#: includes/admin-dashboard.php:427
+#: includes/admin-dashboard.php:434
 msgid "customer@example.com"
 msgstr ""
 
-#: includes/admin-dashboard.php:428 includes/common/common-functions.php:195
+#: includes/admin-dashboard.php:435 includes/common/common-functions.php:195
 #: templates/admin/products/products-list-template.php:77
 #: templates/admin/subscribers/subscribers-list-template.php:109
 msgid "Product"
 msgstr ""
 
-#: includes/admin-dashboard.php:429
+#: includes/admin-dashboard.php:436
 msgid "Search for a product or variation"
 msgstr ""
 
-#: includes/admin-dashboard.php:430
+#: includes/admin-dashboard.php:437
 msgid "Add to Waiting List"
 msgstr ""
 
-#: includes/admin-dashboard.php:445
-#: templates/front/myaccount/waiting-list-template.php:81
+#: includes/admin-dashboard.php:452
+#: templates/front/myaccount/waiting-list-template.php:83
 msgid "Search"
 msgstr ""
 
-#: includes/admin-dashboard.php:461
+#: includes/admin-dashboard.php:468
 msgid "Products With Waiting Customers"
 msgstr ""
 
-#: includes/admin-dashboard.php:471
+#: includes/admin-dashboard.php:478
 msgid "Search Products"
 msgstr ""
 
-#: includes/admin-dashboard.php:491
+#: includes/admin-dashboard.php:498
 msgid "Subscribers per page"
 msgstr ""
 
-#: includes/admin-dashboard.php:500
+#: includes/admin-dashboard.php:507
 msgid "Products per page"
 msgstr ""
 
-#: includes/admin-dashboard.php:541
+#: includes/admin-dashboard.php:548
 msgid "Delete the selected waiting list entries? This cannot be undone."
 msgstr ""
 
-#: includes/admin-dashboard.php:542
+#: includes/admin-dashboard.php:549
 msgid "Email the selected customers now?"
 msgstr ""
 
-#: includes/admin-dashboard.php:545
+#: includes/admin-dashboard.php:552
 msgid "Email preview"
 msgstr ""
 
-#: includes/admin-dashboard.php:546
+#: includes/admin-dashboard.php:553
 msgid "Close"
 msgstr ""
 
-#: includes/admin-dashboard.php:547
+#: includes/admin-dashboard.php:554
 msgid "Sending..."
 msgstr ""
 
-#: includes/admin-dashboard.php:548 includes/front/front-functions.php:218
+#: includes/admin-dashboard.php:555 includes/front/front-functions.php:256
 msgid "Something went wrong. Please try again."
 msgstr ""
 
-#: includes/admin-dashboard.php:567
+#: includes/admin-dashboard.php:574
 #. translators: 1: plugin name, 2: five-star rating link.
 msgid ""
 "Thank you for using %1$s. If you like it, please leave us a %2$s rating. It "
 "means a lot to us!"
 msgstr ""
 
-#: includes/admin-dashboard.php:569
+#: includes/admin-dashboard.php:576
 msgid "five star"
 msgstr ""
 
@@ -612,7 +618,7 @@ msgid ""
 msgstr ""
 
 #: includes/emails/email-base.php:87
-msgid "Waiting List > Emails"
+msgid "Waitlist > Emails"
 msgstr ""
 
 #: includes/emails/email-base.php:151
@@ -637,158 +643,158 @@ msgstr ""
 msgid "Changed your mind? Leave the waiting list"
 msgstr ""
 
-#: includes/file-handler.php:68
+#: includes/file-handler.php:73
 msgid "Notify me when it is back"
 msgstr ""
 
-#: includes/file-handler.php:69
+#: includes/file-handler.php:74
 msgid "This item is sold out right now. We will let you know the moment it is back."
 msgstr ""
 
-#: includes/file-handler.php:70
+#: includes/file-handler.php:75
 msgid "One email when it is back. No spam, unsubscribe anytime."
 msgstr ""
 
-#: includes/file-handler.php:71
+#: includes/file-handler.php:76
 msgid "Notify Me"
 msgstr ""
 
-#: includes/file-handler.php:72
+#: includes/file-handler.php:77
 msgid "Your email address"
 msgstr ""
 
-#: includes/file-handler.php:73
+#: includes/file-handler.php:78
 msgid "Leave waiting list"
 msgstr ""
 
-#: includes/file-handler.php:74 includes/file-handler.php:117
-#: includes/front/front-functions.php:219
+#: includes/file-handler.php:79 includes/file-handler.php:122
+#: includes/front/front-functions.php:257
 msgid "You are on the list"
 msgstr ""
 
-#: includes/file-handler.php:76
+#: includes/file-handler.php:81
 #. translators: {position} is replaced with the customer's place in line.
 msgid "You are number {position} in line. We will email you the moment it is back."
 msgstr ""
 
-#: includes/file-handler.php:89
+#: includes/file-handler.php:94
 msgid "I agree to receive an email when this product is back in stock."
 msgstr ""
 
-#: includes/file-handler.php:93
+#: includes/file-handler.php:98
 msgid "Shop Now"
 msgstr ""
 
-#: includes/file-handler.php:110
+#: includes/file-handler.php:115
 msgid "Good news! {product_name} is back in stock"
 msgstr ""
 
-#: includes/file-handler.php:111
+#: includes/file-handler.php:116
 msgid "It is back in stock"
 msgstr ""
 
-#: includes/file-handler.php:112 includes/file-handler.php:118
+#: includes/file-handler.php:117 includes/file-handler.php:123
 msgid "Hi {customer_name},"
 msgstr ""
 
-#: includes/file-handler.php:112
+#: includes/file-handler.php:117
 msgid ""
 "Great news! {product_name} is back in stock and ready to order. You asked "
 "us to let you know, so you are among the first to hear."
 msgstr ""
 
-#: includes/file-handler.php:112
+#: includes/file-handler.php:117
 msgid ""
 "Stock is limited and other customers are waiting too, so grab yours before "
 "it sells out again."
 msgstr ""
 
-#: includes/file-handler.php:112
+#: includes/file-handler.php:117
 msgid "Thanks for waiting,"
 msgstr ""
 
-#: includes/file-handler.php:116
+#: includes/file-handler.php:121
 msgid "You are on the waiting list for {product_name}"
 msgstr ""
 
-#: includes/file-handler.php:118
+#: includes/file-handler.php:123
 msgid ""
 "Thanks for your interest in {product_name}. You are number {queue_position} "
 "in line, and we will email you as soon as it is back in stock. No need to "
 "keep checking."
 msgstr ""
 
-#: includes/file-handler.php:118
+#: includes/file-handler.php:123
 msgid "Thank you,"
 msgstr ""
 
-#: includes/file-handler.php:123
+#: includes/file-handler.php:128
 msgid "[{site_title}] New waiting list signup for {product_name}"
 msgstr ""
 
-#: includes/file-handler.php:124
+#: includes/file-handler.php:129
 msgid "New waiting list signup"
 msgstr ""
 
-#: includes/file-handler.php:125
+#: includes/file-handler.php:130
 msgid ""
 "{customer_email} joined the waiting list for {product_name}. "
 "{waiting_count} customers are now waiting for this product."
 msgstr ""
 
-#: includes/front/front-functions.php:37
+#: includes/front/front-functions.php:39
 msgid ""
 "You are on the list! We will email you as soon as this product is back in "
 "stock."
 msgstr ""
 
-#: includes/front/front-functions.php:38
+#: includes/front/front-functions.php:40
 msgid "You are already on the waiting list for this product."
 msgstr ""
 
-#: includes/front/front-functions.php:39
+#: includes/front/front-functions.php:41
 msgid "Please enter a valid email address."
 msgstr ""
 
-#: includes/front/front-functions.php:40
+#: includes/front/front-functions.php:42
 msgid "Please accept the consent checkbox to join the waiting list."
 msgstr ""
 
-#: includes/front/front-functions.php:41
+#: includes/front/front-functions.php:43
 msgid "Please log in to join the waiting list."
 msgstr ""
 
-#: includes/front/front-functions.php:42
+#: includes/front/front-functions.php:44
 msgid "This product does not accept waiting list signups right now."
 msgstr ""
 
-#: includes/front/front-functions.php:43
+#: includes/front/front-functions.php:45
 msgid "You have left the waiting list."
 msgstr ""
 
-#: includes/front/front-functions.php:44
+#: includes/front/front-functions.php:46
 msgid "You have been unsubscribed from this waiting list."
 msgstr ""
 
-#: includes/front/front-functions.php:45
+#: includes/front/front-functions.php:47
 msgid "Your session has expired. Please refresh the page and try again."
 msgstr ""
 
-#: includes/front/front-functions.php:97
+#: includes/front/front-functions.php:99
 msgid "You are already on the list"
 msgstr ""
 
-#: includes/front/front-functions.php:154
+#: includes/front/front-functions.php:156
 msgid "My Waiting List"
 msgstr ""
 
-#: includes/front/front-functions.php:215
-#: templates/front/product/join-waiting-list-template.php:180
+#: includes/front/front-functions.php:253
+#: templates/front/product/join-waiting-list-template.php:183
 #. translators: %s: number of waiting customers.
 msgid "%s person is waiting for this product."
 msgstr ""
 
-#: includes/front/front-functions.php:217
+#: includes/front/front-functions.php:255
 #. translators: %s: number of waiting customers.
 msgid "%s people are waiting for this product."
 msgstr ""
@@ -1373,83 +1379,87 @@ msgstr ""
 msgid "Subscribers by Status"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:129
-#: templates/admin/subscribers/subscribers-list-template.php:352
-msgid "No subscribers yet"
+#: templates/admin/dashboard/dashboard-template.php:124
+msgid "All time"
 msgstr ""
 
 #: templates/admin/dashboard/dashboard-template.php:130
+#: templates/admin/subscribers/subscribers-list-template.php:355
+msgid "No subscribers yet"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:131
 msgid "Statuses appear once customers join a waiting list."
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:136
+#: templates/admin/dashboard/dashboard-template.php:137
 msgid "Most Wanted Products"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:141
+#: templates/admin/dashboard/dashboard-template.php:142
 msgid "Ready to Sell"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:146
+#: templates/admin/dashboard/dashboard-template.php:147
 msgid "Recent Signups"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:151
+#: templates/admin/dashboard/dashboard-template.php:152
 msgid "Recovered Sales"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:169
+#: templates/admin/dashboard/dashboard-template.php:170
 msgid "See exactly how much revenue your waiting list brings back"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:170
+#: templates/admin/dashboard/dashboard-template.php:171
 msgid ""
 "Pro links every order to the restock email that won it, so you know which "
 "products to reorder first."
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:172
+#: templates/admin/dashboard/dashboard-template.php:173
 msgid "Recovered orders and revenue, compared with the previous period"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:173
+#: templates/admin/dashboard/dashboard-template.php:174
 msgid "Email to click to purchase funnel"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:174
+#: templates/admin/dashboard/dashboard-template.php:175
 msgid "Revenue per product on the Products screen"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:204
+#: templates/admin/dashboard/dashboard-template.php:205
 #. translators: %s: waiting customers.
 msgid "%s waiting"
 msgid_plural "%s waiting"
 msgstr[0] ""
 msgstr[1] ""
 
-#: templates/admin/dashboard/dashboard-template.php:210
+#: templates/admin/dashboard/dashboard-template.php:211
 msgid "Email now"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:224
+#: templates/admin/dashboard/dashboard-template.php:225
 msgid "Nobody is waiting right now. Your most requested products will rank here."
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:233
+#: templates/admin/dashboard/dashboard-template.php:234
 msgid ""
 "All caught up. In-stock products with customers still waiting appear here, "
 "ready to email."
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:243
+#: templates/admin/dashboard/dashboard-template.php:244
 msgid "New signups show up here the moment a customer joins."
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:243
+#: templates/admin/dashboard/dashboard-template.php:244
 msgid "No signups yet"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:280
+#: templates/admin/dashboard/dashboard-template.php:281
 msgid "Nothing here yet"
 msgstr ""
 
@@ -1596,7 +1606,7 @@ msgid "Clear waiting list"
 msgstr ""
 
 #: templates/admin/products/products-list-template.php:154
-#: templates/admin/subscribers/subscribers-list-template.php:275
+#: templates/admin/subscribers/subscribers-list-template.php:278
 msgid "Product deleted"
 msgstr ""
 
@@ -1613,14 +1623,14 @@ msgid "Clear list"
 msgstr ""
 
 #: templates/admin/products/products-list-template.php:188
-#: templates/admin/subscribers/subscribers-list-template.php:279
-#: templates/front/myaccount/waiting-list-template.php:109
+#: templates/admin/subscribers/subscribers-list-template.php:282
+#: templates/front/myaccount/waiting-list-template.php:111
 msgid "In stock"
 msgstr ""
 
 #: templates/admin/products/products-list-template.php:189
-#: templates/admin/subscribers/subscribers-list-template.php:280
-#: templates/front/myaccount/waiting-list-template.php:109
+#: templates/admin/subscribers/subscribers-list-template.php:283
+#: templates/front/myaccount/waiting-list-template.php:111
 msgid "Out of stock"
 msgstr ""
 
@@ -1671,7 +1681,7 @@ msgid "Move back to waiting"
 msgstr ""
 
 #: templates/admin/subscribers/subscribers-list-template.php:178
-#: templates/admin/subscribers/subscribers-list-template.php:260
+#: templates/admin/subscribers/subscribers-list-template.php:263
 msgid "Delete"
 msgstr ""
 
@@ -1688,108 +1698,112 @@ msgstr ""
 msgid "Guest"
 msgstr ""
 
-#: templates/admin/subscribers/subscribers-list-template.php:253
+#: templates/admin/subscribers/subscribers-list-template.php:256
 msgid "Send email"
 msgstr ""
 
-#: templates/admin/subscribers/subscribers-list-template.php:257
+#: templates/admin/subscribers/subscribers-list-template.php:260
 msgid "Move to waiting"
 msgstr ""
 
-#: templates/admin/subscribers/subscribers-list-template.php:302
-#: templates/front/myaccount/waiting-list-template.php:115
+#: templates/admin/subscribers/subscribers-list-template.php:305
+#: templates/front/myaccount/waiting-list-template.php:117
 #. translators: %s: place in line.
 msgid "Number %s in line"
 msgstr ""
 
-#: templates/admin/subscribers/subscribers-list-template.php:352
+#: templates/admin/subscribers/subscribers-list-template.php:355
 msgid "No matching subscribers"
 msgstr ""
 
-#: templates/admin/subscribers/subscribers-list-template.php:353
+#: templates/admin/subscribers/subscribers-list-template.php:356
 msgid "Nobody matches these filters. Try another status or clear the search."
 msgstr ""
 
-#: templates/admin/subscribers/subscribers-list-template.php:353
+#: templates/admin/subscribers/subscribers-list-template.php:356
 msgid ""
 "Customers appear here as soon as they join a waiting list on a sold out "
 "product. You can also add them by hand."
 msgstr ""
 
-#: templates/admin/subscribers/subscribers-list-template.php:363
+#: templates/admin/subscribers/subscribers-list-template.php:366
 msgid "Show all subscribers"
 msgstr ""
 
-#: templates/admin/subscribers/subscribers-list-template.php:363
+#: templates/admin/subscribers/subscribers-list-template.php:366
 msgid "Customize the signup form"
 msgstr ""
 
-#: templates/front/myaccount/waiting-list-template.php:77
+#: templates/front/myaccount/waiting-list-template.php:79
 msgid "Products you are waiting for"
 msgstr ""
 
-#: templates/front/myaccount/waiting-list-template.php:79
-#: templates/front/myaccount/waiting-list-template.php:80
+#: templates/front/myaccount/waiting-list-template.php:81
+#: templates/front/myaccount/waiting-list-template.php:82
 msgid "Search products"
 msgstr ""
 
-#: templates/front/myaccount/waiting-list-template.php:88
+#: templates/front/myaccount/waiting-list-template.php:90
 msgid "No matches"
 msgstr ""
 
-#: templates/front/myaccount/waiting-list-template.php:88
+#: templates/front/myaccount/waiting-list-template.php:90
 msgid "Nothing on your list yet"
 msgstr ""
 
-#: templates/front/myaccount/waiting-list-template.php:89
+#: templates/front/myaccount/waiting-list-template.php:91
 msgid "No waiting list entries match your search. Try another product name."
 msgstr ""
 
-#: templates/front/myaccount/waiting-list-template.php:89
+#: templates/front/myaccount/waiting-list-template.php:91
 msgid ""
 "When a product you love is sold out, tap \"Notify Me\" on its page and we "
 "will email you as soon as it is back."
 msgstr ""
 
-#: templates/front/myaccount/waiting-list-template.php:90
+#: templates/front/myaccount/waiting-list-template.php:92
 msgid "Clear search"
 msgstr ""
 
-#: templates/front/myaccount/waiting-list-template.php:90
+#: templates/front/myaccount/waiting-list-template.php:92
 msgid "Browse the shop"
 msgstr ""
 
-#: templates/front/myaccount/waiting-list-template.php:122
+#: templates/front/myaccount/waiting-list-template.php:124
 #. translators: %s: date the customer joined.
 msgid "Joined %s"
 msgstr ""
 
-#: templates/front/myaccount/waiting-list-template.php:137
+#: templates/front/myaccount/waiting-list-template.php:139
 msgid "Buy now"
 msgstr ""
 
-#: templates/front/myaccount/waiting-list-template.php:147
+#: templates/front/myaccount/waiting-list-template.php:149
 msgid "Previous"
 msgstr ""
 
-#: templates/front/myaccount/waiting-list-template.php:150
+#: templates/front/myaccount/waiting-list-template.php:152
 msgid "Next"
 msgstr ""
 
-#: templates/front/product/join-waiting-list-template.php:196
+#: templates/front/product/join-waiting-list-template.php:199
 msgid "Log in to get notified"
 msgstr ""
 
-#: templates/front/product/join-waiting-list-template.php:205
+#: templates/front/product/join-waiting-list-template.php:208
 msgid "Leave this field empty"
 msgstr ""
 
-#: templates/front/product/join-waiting-list-template.php:213
+#: templates/front/product/join-waiting-list-template.php:212
+msgid "Option"
+msgstr ""
+
+#: templates/front/product/join-waiting-list-template.php:226
 #. translators: %s: customer email.
 msgid "We will email %s."
 msgstr ""
 
-#: templates/front/product/join-waiting-list-template.php:217
+#: templates/front/product/join-waiting-list-template.php:230
 msgid "Email address"
 msgstr ""
 

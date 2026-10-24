@@ -249,7 +249,10 @@ if ( ! class_exists( 'DDWCWL_Subscribers_List_Template' ) ) {
 
 			$actions = [];
 
-			if ( in_array( $item->status, [ 'waiting', 'notified' ], true ) ) {
+			$product = wc_get_product( $item->product_id );
+
+			// Only while the product is in stock: the email tells the customer it is back.
+			if ( in_array( $item->status, [ 'waiting', 'notified' ], true ) && $product && $product->is_in_stock() ) {
 				$actions['notify'] = '<a href="' . esc_url( $this->action_url( 'notify', $item->id ) ) . '" class="ddwcwl-confirm-notify">' . esc_html__( 'Send email', 'devdiggers-waitlist-for-woocommerce' ) . '</a>';
 			}
 

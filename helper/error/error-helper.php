@@ -43,7 +43,12 @@ if ( ! trait_exists( 'DDWCWL_Error_Helper' ) ) {
 				return;
 			}
 
-			wc_print_notice( esc_html( $message ), 'success' === $error_type ? 'success' : ( 'error' === $error_type ? 'error' : 'notice' ) );
+			// The same markup the AJAX path builds in front.js, so a message reached through an email link
+			// (confirm, unsubscribe) or a no-JavaScript post looks like every other waiting list message.
+			$success = 'error' !== $error_type;
+			?>
+			<div class="ddwcwl-message ddwcwl-message-<?php echo esc_attr( $success ? 'success' : 'error' ); ?>" role="<?php echo esc_attr( $success ? 'status' : 'alert' ); ?>"><?php echo esc_html( $message ); ?></div>
+			<?php
 		}
 
 		/**

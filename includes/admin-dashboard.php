@@ -393,8 +393,15 @@ if ( ! class_exists( 'DDWCWL_Admin_Dashboard' ) ) {
 				return;
 			}
 
-			$is_error = in_array( $message, [ 'add_exists', 'add_invalid' ], true ) || ( 'notify_all' === $message && ! $done );
-			$text     = 'notify_all' === $message && ! $done ? __( 'Nothing queued. Restock emails are only sent for in-stock products that have waiting customers.', 'devdiggers-waitlist-for-woocommerce' ) : sprintf( $messages[ $message ], $done );
+			$is_error = in_array( $message, [ 'add_exists', 'add_invalid' ], true ) || ( in_array( $message, [ 'notify', 'notify_all' ], true ) && ! $done );
+
+			if ( 'notify_all' === $message && ! $done ) {
+				$text = __( 'Nothing queued. Restock emails are only sent for in-stock products that have waiting customers.', 'devdiggers-waitlist-for-woocommerce' );
+			} elseif ( 'notify' === $message && ! $done ) {
+				$text = __( 'Nobody was emailed. Back in stock emails are only sent while the product is in stock.', 'devdiggers-waitlist-for-woocommerce' );
+			} else {
+				$text = sprintf( $messages[ $message ], $done );
+			}
 
 			$this->ddwcwl_print_notification( $text, $is_error ? 'error' : 'success' );
 		}

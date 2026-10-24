@@ -54,10 +54,6 @@ if ( ! class_exists( 'DDWCWL_Waiting_List_Template' ) ) {
 			$notice = ! empty( $_GET['ddwcwl_notice'] ) ? sanitize_key( wp_unslash( $_GET['ddwcwl_notice'] ) ) : '';
 			// phpcs:enable WordPress.Security.NonceVerification.Recommended
 
-			if ( $notice && DDWCWL_Front_Functions::ddwcwl_get_message( $notice ) ) {
-				$this->ddwcwl_print_notification( DDWCWL_Front_Functions::ddwcwl_get_message( $notice ), in_array( $notice, [ 'left', 'unsubscribed' ], true ) ? 'success' : 'error' );
-			}
-
 			$helper = new DDWCWL_Subscribers_Helper();
 			$result = $helper->query(
 				[
@@ -73,6 +69,12 @@ if ( ! class_exists( 'DDWCWL_Waiting_List_Template' ) ) {
 			$endpoint    = $ddwcwl_waiting_list['waiting_list_endpoint'];
 			?>
 			<div class="ddwcwl-account-list">
+				<?php
+				// Inside the list, so the message picks up the list's own colours and radius.
+				if ( $notice && DDWCWL_Front_Functions::ddwcwl_get_message( $notice ) ) {
+					$this->ddwcwl_print_notification( DDWCWL_Front_Functions::ddwcwl_get_message( $notice ), in_array( $notice, [ 'left', 'unsubscribed' ], true ) ? 'success' : 'error' );
+				}
+				?>
 				<div class="ddwcwl-account-toolbar">
 					<h3><?php esc_html_e( 'Products you are waiting for', 'devdiggers-waitlist-for-woocommerce' ); ?></h3>
 					<form class="ddwcwl-account-search" method="get" action="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>" role="search">

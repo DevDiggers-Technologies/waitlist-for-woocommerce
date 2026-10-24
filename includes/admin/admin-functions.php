@@ -275,7 +275,10 @@ if ( ! class_exists( 'DDWCWL_Admin_Functions' ) ) {
 				case 'notify':
 					foreach ( $ids as $id ) {
 						$subscriber = $helper->get( $id );
-						$done      += ( $subscriber && $notifier->notify( $subscriber ) ) ? 1 : 0;
+						$product    = $subscriber ? wc_get_product( $subscriber->product_id ) : null;
+
+						// A back in stock email for a product that is still sold out would send the customer to a dead end.
+						$done += ( $product && $product->is_in_stock() && $notifier->notify( $subscriber, $product ) ) ? 1 : 0;
 					}
 					break;
 

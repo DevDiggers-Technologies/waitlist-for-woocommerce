@@ -99,9 +99,10 @@ if ( ! class_exists( 'DDWCWL_Join_Waiting_List_Template' ) ) {
 		 * script points at the chosen variation.
 		 *
 		 * @param \WC_Product $product Product.
+		 * @param string      $context product (the product page) or shortcode (anywhere else).
 		 * @return void
 		 */
-		public function ddwcwl_get_join_waiting_list_template( $product ) {
+		public function ddwcwl_get_join_waiting_list_template( $product, $context = 'product' ) {
 			global $ddwcwl_waiting_list;
 
 			if ( ! $product instanceof \WC_Product ) {
@@ -131,6 +132,8 @@ if ( ! class_exists( 'DDWCWL_Join_Waiting_List_Template' ) ) {
 
 			$config       = $ddwcwl_waiting_list;
 			$is_variable  = ! empty( $variations );
+			// A shortcode away from the product's own page has no variations form to follow, so it gets its own picker.
+			$has_picker   = $is_variable && 'product' !== $context;
 			$logged_in    = is_user_logged_in();
 			$needs_login  = 'yes' === $config['require_login'] && ! $logged_in;
 			$uid          = wp_unique_id( 'ddwcwl-' );
@@ -147,10 +150,10 @@ if ( ! class_exists( 'DDWCWL_Join_Waiting_List_Template' ) ) {
 			// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only notice code set by our own redirect.
 			$notice  = ! empty( $_GET['ddwcwl_notice'] ) ? sanitize_key( wp_unslash( $_GET['ddwcwl_notice'] ) ) : '';
 			$message = $notice ? DDWCWL_Front_Functions::ddwcwl_get_message( $notice ) : '';
-			$hidden  = $is_variable && ! $message;
+			$hidden  = $is_variable && ! $has_picker && ! $message;
 			?>
 			<div
-				class="ddwcwl-waiting-list ddwcwl-context-product ddwcwl-style-card<?php echo esc_attr( $state['joined'] ? ' ddwcwl-joined' : '' ); ?>"
+				class="ddwcwl-waiting-list ddwcwl-context-<?php echo esc_attr( 'product' === $context ? 'product' : 'shortcode' ); ?> ddwcwl-style-card<?php echo esc_attr( $state['joined'] ? ' ddwcwl-joined' : '' ); ?>"
 				style="<?php echo esc_attr( $button_style ); ?>"
 				data-variations="<?php echo esc_attr( $is_variable ? wp_json_encode( $variations ) : '' ); ?>"
 				data-state="<?php echo esc_attr( $is_variable ? '' : wp_json_encode( $state ) ); ?>"
@@ -200,10 +203,20 @@ if ( ! class_exists( 'DDWCWL_Join_Waiting_List_Template' ) ) {
 						<input type="hidden" name="ddwcwl_form_action" value="join" />
 						<input type="hidden" name="ddwcwl_nonce" value="<?php echo esc_attr( wp_create_nonce( 'ddwcwl-nonce' ) ); ?>" />
 						<?php wp_referer_field(); ?>
-						<input type="hidden" name="ddwcwl_product_id" class="ddwcwl-product-id" value="<?php echo esc_attr( $is_variable ? '' : $product->get_id() ); ?>" />
+						<input type="hidden" name="ddwcwl_product_id" class="ddwcwl-product-id" value="<?php echo esc_attr( $is_variable ? ( $has_picker ? array_key_first( $variations ) : '' ) : $product->get_id() ); ?>" />
 						<p class="ddwcwl-hp" aria-hidden="true">
 							<label><?php esc_html_e( 'Leave this field empty', 'devdiggers-waitlist-for-woocommerce' ); ?><input type="text" name="ddwcwl_website" value="" tabindex="-1" autocomplete="off" /></label>
 						</p>
+						<?php if ( $has_picker ) : ?>
+							<p class="ddwcwl-field">
+								<label for="<?php echo esc_attr( $uid ); ?>-variation"><?php esc_html_e( 'Option', 'devdiggers-waitlist-for-woocommerce' ); ?></label>
+								<select id="<?php echo esc_attr( $uid ); ?>-variation" class="ddwcwl-variation-select">
+									<?php foreach ( array_keys( $variations ) as $variation_id ) : ?>
+										<option value="<?php echo esc_attr( $variation_id ); ?>"><?php echo esc_html( wc_get_formatted_variation( wc_get_product( $variation_id ), true, false, false ) ); ?></option>
+									<?php endforeach; ?>
+								</select>
+							</p>
+						<?php endif; ?>
 
 						<?php if ( $logged_in ) : ?>
 							<button type="submit" class="ddwcwl-button ddwcwl-button-block ddwcwl-join-button"><?php echo wp_kses( self::icon( 'bell' ), self::svg_kses() ); ?><span><?php echo esc_html( $config['join_button_text'] ); ?></span></button>
@@ -251,7 +264,7 @@ if ( ! class_exists( 'DDWCWL_Join_Waiting_List_Template' ) ) {
 									<input type="hidden" name="ddwcwl_form_action" value="leave" />
 									<input type="hidden" name="ddwcwl_nonce" value="<?php echo esc_attr( wp_create_nonce( 'ddwcwl-nonce' ) ); ?>" />
 									<?php wp_referer_field(); ?>
-									<input type="hidden" name="ddwcwl_product_id" class="ddwcwl-product-id" value="<?php echo esc_attr( $is_variable ? '' : $product->get_id() ); ?>" />
+									<input type="hidden" name="ddwcwl_product_id" class="ddwcwl-product-id" value="<?php echo esc_attr( $is_variable ? ( $has_picker ? array_key_first( $variations ) : '' ) : $product->get_id() ); ?>" />
 									<button type="submit" class="ddwcwl-link-button ddwcwl-leave-button"><?php echo esc_html( $config['leave_button_text'] ); ?></button>
 								</form>
 							<?php endif; ?>

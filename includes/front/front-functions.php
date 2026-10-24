@@ -19,6 +19,8 @@ if ( ! class_exists( 'DDWCWL_Front_Functions' ) ) {
 	 * Front functions class
 	 */
 	class DDWCWL_Front_Functions {
+		use \DDWCWaitingList\Helper\Error\DDWCWL_Error_Helper;
+
 		/**
 		 * Whether the product page form was already printed, so block and classic hooks never both print it.
 		 *
@@ -172,10 +174,46 @@ if ( ! class_exists( 'DDWCWL_Front_Functions' ) ) {
 		public function ddwcwl_add_content_in_single_product_page() {
 			global $product;
 
-			if ( ! $this->rendered ) {
-				$this->rendered = true;
-				( new Front\Product\DDWCWL_Join_Waiting_List_Template() )->ddwcwl_get_join_waiting_list_template( $product instanceof \WC_Product ? $product : wc_get_product( get_queried_object_id() ) );
+			if ( $this->rendered ) {
+				return;
 			}
+
+			$this->rendered = true;
+
+			ob_start();
+			( new Front\Product\DDWCWL_Join_Waiting_List_Template() )->ddwcwl_get_join_waiting_list_template( $product instanceof \WC_Product ? $product : wc_get_product( get_queried_object_id() ) );
+			$html = (string) ob_get_clean();
+
+			// No form (the product is back in stock): still confirm what an email link just did, such as an unsubscribe.
+			if ( '' === trim( $html ) ) {
+				$html = $this->ddwcwl_get_notice_only_html();
+			}
+
+			echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Built from escaped template output.
+		}
+
+		/**
+		 * The message of a `ddwcwl_notice` redirect, on a product page that shows no form.
+		 *
+		 * @return string
+		 */
+		protected function ddwcwl_get_notice_only_html() {
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only notice code set by our own redirect.
+			$notice  = ! empty( $_GET['ddwcwl_notice'] ) ? sanitize_key( wp_unslash( $_GET['ddwcwl_notice'] ) ) : '';
+			$message = $notice ? self::ddwcwl_get_message( $notice ) : '';
+
+			if ( ! $message ) {
+				return '';
+			}
+
+			wp_enqueue_style( 'ddwcwl-front-style' );
+
+			ob_start();
+			echo '<div class="ddwcwl-waiting-list ddwcwl-notice-only">';
+			$this->ddwcwl_print_notification( $message, in_array( $notice, [ 'added', 'left', 'unsubscribed' ], true ) ? 'success' : 'error' );
+			echo '</div>';
+
+			return (string) ob_get_clean();
 		}
 
 		/**
@@ -285,6 +323,28 @@ if ( ! class_exists( 'DDWCWL_Front_Functions' ) ) {
 		}
 
 		/**
+		 * After the My Account login or registration form, return to the product whose
+		 * "Log in to get notified" button the shopper followed. WooCommerce itself only reads
+		 * a posted `redirect` field, so the `redirect_to` on our link would otherwise be lost
+		 * and the shopper would land on the account dashboard.
+		 *
+		 * @param string $redirect Redirect URL chosen by WooCommerce.
+		 * @return string
+		 */
+		public function ddwcwl_login_redirect( $redirect ) {
+			$referer = wc_get_raw_referer();
+			$query   = $referer ? wp_parse_url( $referer, PHP_URL_QUERY ) : '';
+
+			if ( ! $query ) {
+				return $redirect;
+			}
+
+			parse_str( $query, $args );
+
+			return empty( $args['redirect_to'] ) || ! is_string( $args['redirect_to'] ) ? $redirect : wp_validate_redirect( $args['redirect_to'], $redirect );
+		}
+
+		/**
 		 * Sanitize the configured shortcode tag.
 		 *
 		 * @param string $shortcode Shortcode as saved, with or without brackets.
@@ -312,8 +372,12 @@ if ( ! class_exists( 'DDWCWL_Front_Functions' ) ) {
 				return '';
 			}
 
+			// Away from its own product page a variable product has no variations form for the waitlist to follow.
+			$own_page = is_product() && get_queried_object_id() === ( $target_product->get_parent_id() ? $target_product->get_parent_id() : $target_product->get_id() );
+			$context  = $target_product->is_type( 'variable' ) && ! $own_page ? 'shortcode' : 'product';
+
 			ob_start();
-			( new Front\Product\DDWCWL_Join_Waiting_List_Template() )->ddwcwl_get_join_waiting_list_template( $target_product );
+			( new Front\Product\DDWCWL_Join_Waiting_List_Template() )->ddwcwl_get_join_waiting_list_template( $target_product, $context );
 			return ob_get_clean();
 		}
 	}

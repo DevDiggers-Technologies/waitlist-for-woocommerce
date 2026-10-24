@@ -196,6 +196,17 @@ document.querySelectorAll( '.ddwcwl-waiting-list[data-state]' ).forEach( ( box )
 	}
 } );
 
+document.addEventListener( 'change', ( event ) => {
+	if ( event.target.matches( '.ddwcwl-variation-select' ) ) {
+		setProduct( event.target.closest( '.ddwcwl-waiting-list' ), event.target.value );
+	}
+} );
+
+// A shortcode away from the product page carries its own variation picker: show the first option's state.
+document.querySelectorAll( '.ddwcwl-context-shortcode .ddwcwl-variation-select' ).forEach( ( select ) => {
+	setProduct( select.closest( '.ddwcwl-waiting-list' ), select.value );
+} );
+
 // Variable product pages: show the form only for eligible (out of stock) variations.
 if ( window.jQuery ) {
 	/**
