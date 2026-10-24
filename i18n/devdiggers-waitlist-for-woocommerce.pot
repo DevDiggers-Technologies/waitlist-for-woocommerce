@@ -1,0 +1,1827 @@
+# Copyright (C) 2026 DevDiggers
+# This file is distributed under the GPLv3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: DevDiggers Waitlist for WooCommerce 1.0.0\n"
+"Report-Msgid-Bugs-To: "
+"https://wordpress.org/support/plugin/devdiggers-waitlist-for-woocommerce\n"
+"POT-Creation-Date: 2026-10-24 14:05:07+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2026-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: grunt-wp-i18n 1.0.3\n"
+
+#: functions.php:98
+#. translators: %1$s: opening link tag, %2$s: closing link tag
+msgid ""
+"DevDiggers Waitlist for WooCommerce is activated but not effective. It "
+"requires %1$sWooCommerce%2$s in order to work."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "DevDiggers Waitlist for WooCommerce"
+msgstr ""
+
+#: functions.php:138 includes/admin-dashboard.php:147
+msgid "Dashboard"
+msgstr ""
+
+#: functions.php:140 includes/admin-dashboard.php:167
+msgid "Configuration"
+msgstr ""
+
+#: functions.php:142
+msgid "Setup Wizard"
+msgstr ""
+
+#: functions.php:144
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: functions.php:161
+msgid "Support"
+msgstr ""
+
+#: functions.php:162
+msgid "Documentation"
+msgstr ""
+
+#: functions.php:163
+msgid "Review"
+msgstr ""
+
+#: helper/subscribers/subscribers-helper.php:52
+#: templates/admin/products/products-list-template.php:79
+msgid "Waiting"
+msgstr ""
+
+#: helper/subscribers/subscribers-helper.php:53
+#: templates/admin/products/products-list-template.php:80
+#: templates/admin/subscribers/subscribers-list-template.php:112
+msgid "Notified"
+msgstr ""
+
+#: helper/subscribers/subscribers-helper.php:54
+msgid "Unsubscribed"
+msgstr ""
+
+#: includes/admin/admin-functions.php:178
+#: includes/admin/admin-functions.php:183 includes/admin/setup-wizard.php:33
+#: includes/admin-dashboard.php:138 includes/admin-dashboard.php:139
+#: includes/admin-dashboard.php:141
+msgid "Waitlist"
+msgstr ""
+
+#: includes/admin/admin-functions.php:261
+msgid "You do not have permission to manage the waiting list."
+msgstr ""
+
+#: includes/admin/admin-functions.php:399
+msgid "You do not have permission to preview emails."
+msgstr ""
+
+#: includes/admin/admin-functions.php:409
+msgid "Add at least one product to preview waiting list emails."
+msgstr ""
+
+#: includes/admin/admin-functions.php:424
+msgid "You do not have permission to send test emails."
+msgstr ""
+
+#: includes/admin/admin-functions.php:435
+msgid "Enter a valid email address."
+msgstr ""
+
+#: includes/admin/admin-functions.php:439
+msgid ""
+"The mail server did not accept the email. Check your SMTP settings, then "
+"try again."
+msgstr ""
+
+#: includes/admin/admin-functions.php:443
+#. translators: %s: recipient email.
+msgid "Test email sent to %s."
+msgstr ""
+
+#: includes/admin/setup-wizard.php:34
+msgid "Turn sold out products into sales."
+msgstr ""
+
+#: includes/admin/setup-wizard.php:38
+msgid "Welcome"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:42 includes/admin-dashboard.php:117
+#: templates/admin/configuration/general-configuration-template.php:36
+msgid "General"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:43
+msgid "Set up your waiting list"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:48
+msgid "Growth"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:49
+msgid "Build trust at signup"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:54
+msgid "Ready!"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:55
+msgid "Your waiting list is ready."
+msgstr ""
+
+#: includes/admin/setup-wizard.php:56
+msgid ""
+"Out of stock products now show a \"Notify Me\" form. Track signups and "
+"demand from the dashboard."
+msgstr ""
+
+#: includes/admin/setup-wizard.php:67
+msgid "Welcome to Waitlist!"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:68
+msgid ""
+"Let us set up your waiting list in a minute: choose who can join and how "
+"restock emails go out, so every sold out product keeps collecting buyers."
+msgstr ""
+
+#: includes/admin/setup-wizard.php:99 includes/common/common-functions.php:199
+#: templates/admin/subscribers/subscribers-list-template.php:110
+msgid "Status"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:100
+msgid "Enable the waitlist"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:106
+msgid "Join Button Text"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:112
+#: templates/admin/configuration/restock-configuration-template.php:43
+msgid "Restock Emails"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:113
+msgid "Automatically email waiting customers when stock returns"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:119
+msgid "Backorders"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:120
+msgid "Also show the form on backorder products"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:136
+msgid "Social Proof"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:137
+#: templates/admin/configuration/display-configuration-template.php:94
+msgid "Show how many people are waiting"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:143
+#: templates/admin/configuration/display-configuration-template.php:95
+msgid "Place in Line"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:144
+#: templates/admin/configuration/display-configuration-template.php:95
+msgid "Tell customers their place in line after they join"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:150
+#: templates/admin/configuration/display-configuration-template.php:106
+msgid "Consent Checkbox"
+msgstr ""
+
+#: includes/admin/setup-wizard.php:151
+msgid "Require a consent checkbox to join (recommended for EU and UK stores)"
+msgstr ""
+
+#: includes/admin-dashboard.php:65
+#: templates/admin/emails/email-configuration-template.php:127
+msgid "Back in Stock"
+msgstr ""
+
+#: includes/admin-dashboard.php:66
+#: templates/admin/emails/email-configuration-template.php:134
+msgid "Signup Confirmation"
+msgstr ""
+
+#: includes/admin-dashboard.php:67
+#: templates/admin/emails/email-configuration-template.php:141
+msgid "Admin Alert"
+msgstr ""
+
+#: includes/admin-dashboard.php:94 includes/admin-dashboard.php:261
+msgid "Reminder"
+msgstr ""
+
+#: includes/admin-dashboard.php:99 includes/admin-dashboard.php:283
+msgid "Email Confirmation"
+msgstr ""
+
+#: includes/admin-dashboard.php:104
+#: templates/admin/emails/email-settings-template.php:29
+msgid "Email Settings"
+msgstr ""
+
+#: includes/admin-dashboard.php:111 includes/admin-dashboard.php:239
+msgid "Email Log"
+msgstr ""
+
+#: includes/admin-dashboard.php:118
+msgid "Signup Form"
+msgstr ""
+
+#: includes/admin-dashboard.php:119
+msgid "Restock Rules"
+msgstr ""
+
+#: includes/admin-dashboard.php:120 includes/admin-dashboard.php:314
+msgid "Coupons"
+msgstr ""
+
+#: includes/admin-dashboard.php:121 includes/admin-dashboard.php:336
+msgid "Integrations"
+msgstr ""
+
+#: includes/admin-dashboard.php:122
+msgid "Shortcodes"
+msgstr ""
+
+#: includes/admin-dashboard.php:152 includes/admin-dashboard.php:421
+msgid "Subscribers"
+msgstr ""
+
+#: includes/admin-dashboard.php:157
+msgid "Products"
+msgstr ""
+
+#: includes/admin-dashboard.php:162
+msgid "Emails"
+msgstr ""
+
+#: includes/admin-dashboard.php:240
+msgid ""
+"Every waiting list email the store sent, so you can confirm a customer was "
+"emailed or spot mail server problems early."
+msgstr ""
+
+#: includes/admin-dashboard.php:243
+msgid "Prove every restock email went out"
+msgstr ""
+
+#: includes/admin-dashboard.php:244
+msgid ""
+"Pro records each waiting list email with its recipient, subject and "
+"delivery result, so a \"I never got the email\" ticket takes seconds to "
+"answer."
+msgstr ""
+
+#: includes/admin-dashboard.php:246
+msgid "Sent and failed emails, filterable by type"
+msgstr ""
+
+#: includes/admin-dashboard.php:247
+msgid "Search by customer email or subject"
+msgstr ""
+
+#: includes/admin-dashboard.php:248
+msgid "Automatic cleanup after the number of days you choose"
+msgstr ""
+
+#: includes/admin-dashboard.php:262
+msgid ""
+"A second nudge for customers who were told the product is back but have not "
+"bought yet."
+msgstr ""
+
+#: includes/admin-dashboard.php:265
+msgid "Win back customers who forgot to buy"
+msgstr ""
+
+#: includes/admin-dashboard.php:266
+msgid ""
+"Pro emails notified customers again a few days later while the product is "
+"still in stock, and stops the moment they order."
+msgstr ""
+
+#: includes/admin-dashboard.php:268
+msgid "Send after the number of days you choose"
+msgstr ""
+
+#: includes/admin-dashboard.php:269
+msgid "Skipped for customers who already bought or when stock ran out"
+msgstr ""
+
+#: includes/admin-dashboard.php:270
+msgid "Fully editable subject, heading and content"
+msgstr ""
+
+#: includes/admin-dashboard.php:284
+msgid "Ask guests to confirm their address before they join the waiting list."
+msgstr ""
+
+#: includes/admin-dashboard.php:287
+msgid "Keep your list clean with double opt-in"
+msgstr ""
+
+#: includes/admin-dashboard.php:288
+msgid ""
+"Pro sends guests a confirmation link and only saves their place once they "
+"click it, so mistyped and fake addresses never reach your list."
+msgstr ""
+
+#: includes/admin-dashboard.php:290
+msgid "Logged-in customers skip the step automatically"
+msgstr ""
+
+#: includes/admin-dashboard.php:291
+msgid "Unconfirmed signups removed after the days you set"
+msgstr ""
+
+#: includes/admin-dashboard.php:292
+msgid "Editable confirmation email"
+msgstr ""
+
+#: includes/admin-dashboard.php:315
+msgid "Thank customers for waiting with a discount that is theirs alone."
+msgstr ""
+
+#: includes/admin-dashboard.php:318
+msgid "Turn restock emails into orders with a unique coupon"
+msgstr ""
+
+#: includes/admin-dashboard.php:319
+msgid ""
+"Pro adds a single-use coupon to every back-in-stock email, locked to that "
+"customer and product, so it cannot be shared or reused."
+msgstr ""
+
+#: includes/admin-dashboard.php:321
+msgid "Percentage or fixed amount discount"
+msgstr ""
+
+#: includes/admin-dashboard.php:322
+msgid "Expires after the number of days you choose"
+msgstr ""
+
+#: includes/admin-dashboard.php:323
+msgid "Shown as a highlighted code in the email"
+msgstr ""
+
+#: includes/admin-dashboard.php:337
+msgid "Send waiting list events to the tools you already use."
+msgstr ""
+
+#: includes/admin-dashboard.php:340
+msgid "Sync every signup to Zapier, Make, n8n or your CRM"
+msgstr ""
+
+#: includes/admin-dashboard.php:341
+msgid ""
+"Pro posts a signed webhook each time a customer joins, is notified, buys or "
+"leaves, so your email and SMS tools stay in sync."
+msgstr ""
+
+#: includes/admin-dashboard.php:343
+msgid "Choose which events are sent"
+msgstr ""
+
+#: includes/admin-dashboard.php:344
+msgid "HMAC-SHA256 signature with your own secret"
+msgstr ""
+
+#: includes/admin-dashboard.php:345
+msgid "Customer, product and order details in every payload"
+msgstr ""
+
+#: includes/admin-dashboard.php:378
+#. translators: %d: number of subscribers.
+msgid "%d customer was emailed."
+msgid_plural "%d customers were emailed."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/admin-dashboard.php:380
+#. translators: %d: number of subscribers.
+msgid "%d subscriber moved back to waiting."
+msgid_plural "%d subscribers moved back to waiting."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/admin-dashboard.php:382
+#. translators: %d: number of subscribers.
+msgid "%d subscriber deleted."
+msgid_plural "%d subscribers deleted."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/admin-dashboard.php:384
+#. translators: %d: number of products.
+msgid "Restock emails queued for %d product. They are sent in the background."
+msgid_plural "Restock emails queued for %d products. They are sent in the background."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/admin-dashboard.php:386
+#. translators: %d: number of subscribers.
+msgid "%d waiting list entry removed."
+msgid_plural "%d waiting list entries removed."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/admin-dashboard.php:387
+msgid "Subscriber added to the waiting list."
+msgstr ""
+
+#: includes/admin-dashboard.php:388
+msgid "This email is already waiting for that product."
+msgstr ""
+
+#: includes/admin-dashboard.php:389
+msgid "Please choose a product and enter a valid email address."
+msgstr ""
+
+#: includes/admin-dashboard.php:399
+msgid ""
+"Nothing queued. Restock emails are only sent for in-stock products that "
+"have waiting customers."
+msgstr ""
+
+#: includes/admin-dashboard.php:401
+msgid ""
+"Nobody was emailed. Back in stock emails are only sent while the product is "
+"in stock."
+msgstr ""
+
+#: includes/admin-dashboard.php:422
+msgid "Add Subscriber"
+msgstr ""
+
+#: includes/admin-dashboard.php:423
+msgid "Import CSV"
+msgstr ""
+
+#: includes/admin-dashboard.php:424
+msgid "Export CSV"
+msgstr ""
+
+#: includes/admin-dashboard.php:433
+msgid "Email"
+msgstr ""
+
+#: includes/admin-dashboard.php:434
+msgid "customer@example.com"
+msgstr ""
+
+#: includes/admin-dashboard.php:435 includes/common/common-functions.php:195
+#: templates/admin/products/products-list-template.php:77
+#: templates/admin/subscribers/subscribers-list-template.php:109
+msgid "Product"
+msgstr ""
+
+#: includes/admin-dashboard.php:436
+msgid "Search for a product or variation"
+msgstr ""
+
+#: includes/admin-dashboard.php:437
+msgid "Add to Waiting List"
+msgstr ""
+
+#: includes/admin-dashboard.php:452
+#: templates/front/myaccount/waiting-list-template.php:83
+msgid "Search"
+msgstr ""
+
+#: includes/admin-dashboard.php:468
+msgid "Products With Waiting Customers"
+msgstr ""
+
+#: includes/admin-dashboard.php:478
+msgid "Search Products"
+msgstr ""
+
+#: includes/admin-dashboard.php:498
+msgid "Subscribers per page"
+msgstr ""
+
+#: includes/admin-dashboard.php:507
+msgid "Products per page"
+msgstr ""
+
+#: includes/admin-dashboard.php:548
+msgid "Delete the selected waiting list entries? This cannot be undone."
+msgstr ""
+
+#: includes/admin-dashboard.php:549
+msgid "Email the selected customers now?"
+msgstr ""
+
+#: includes/admin-dashboard.php:552
+msgid "Email preview"
+msgstr ""
+
+#: includes/admin-dashboard.php:553
+msgid "Close"
+msgstr ""
+
+#: includes/admin-dashboard.php:554
+msgid "Sending..."
+msgstr ""
+
+#: includes/admin-dashboard.php:555 includes/front/front-functions.php:256
+msgid "Something went wrong. Please try again."
+msgstr ""
+
+#: includes/admin-dashboard.php:574
+#. translators: 1: plugin name, 2: five-star rating link.
+msgid ""
+"Thank you for using %1$s. If you like it, please leave us a %2$s rating. It "
+"means a lot to us!"
+msgstr ""
+
+#: includes/admin-dashboard.php:576
+msgid "five star"
+msgstr ""
+
+#: includes/common/common-functions.php:156
+#: includes/common/common-functions.php:171
+#: includes/common/common-functions.php:191
+msgid "Waiting List Subscriptions"
+msgstr ""
+
+#: includes/common/common-functions.php:203
+msgid "Joined On"
+msgstr ""
+
+#: includes/emails/admin-new-subscriber-email.php:24
+msgid "Waiting List: New Subscriber (Admin)"
+msgstr ""
+
+#: includes/emails/admin-new-subscriber-email.php:25
+msgid ""
+"Sent to the store team when a customer joins a waiting list, with the "
+"current demand for that product."
+msgstr ""
+
+#: includes/emails/admin-new-subscriber-email.php:50
+#: templates/admin/products/products-list-template.php:159
+msgid "View subscribers"
+msgstr ""
+
+#: includes/emails/back-in-stock-email.php:26
+msgid "Waiting List: Back in Stock"
+msgstr ""
+
+#: includes/emails/back-in-stock-email.php:27
+msgid "Sent to waiting customers when a product they asked about is back in stock."
+msgstr ""
+
+#: includes/emails/email-base.php:84
+#: templates/admin/emails/email-configuration-template.php:87
+msgid "Content"
+msgstr ""
+
+#: includes/emails/email-base.php:87
+#. translators: %s: link to the plugin Emails screen.
+msgid ""
+"Turn this email on or off and edit its subject, heading and content under "
+"%s."
+msgstr ""
+
+#: includes/emails/email-base.php:87
+msgid "Waitlist > Emails"
+msgstr ""
+
+#: includes/emails/email-base.php:151
+msgid "Unsubscribe"
+msgstr ""
+
+#: includes/emails/email-base.php:176
+msgid "there"
+msgstr ""
+
+#: includes/emails/subscription-confirmation-email.php:25
+msgid "Waiting List: Signup Confirmation"
+msgstr ""
+
+#: includes/emails/subscription-confirmation-email.php:26
+msgid ""
+"Sent right after a customer joins a waiting list, with their place in line "
+"and a one-click leave link."
+msgstr ""
+
+#: includes/emails/subscription-confirmation-email.php:38
+msgid "Changed your mind? Leave the waiting list"
+msgstr ""
+
+#: includes/file-handler.php:73
+msgid "Notify me when it is back"
+msgstr ""
+
+#: includes/file-handler.php:74
+msgid "This item is sold out right now. We will let you know the moment it is back."
+msgstr ""
+
+#: includes/file-handler.php:75
+msgid "One email when it is back. No spam, unsubscribe anytime."
+msgstr ""
+
+#: includes/file-handler.php:76
+msgid "Notify Me"
+msgstr ""
+
+#: includes/file-handler.php:77
+msgid "Your email address"
+msgstr ""
+
+#: includes/file-handler.php:78
+msgid "Leave waiting list"
+msgstr ""
+
+#: includes/file-handler.php:79 includes/file-handler.php:122
+#: includes/front/front-functions.php:257
+msgid "You are on the list"
+msgstr ""
+
+#: includes/file-handler.php:81
+#. translators: {position} is replaced with the customer's place in line.
+msgid "You are number {position} in line. We will email you the moment it is back."
+msgstr ""
+
+#: includes/file-handler.php:94
+msgid "I agree to receive an email when this product is back in stock."
+msgstr ""
+
+#: includes/file-handler.php:98
+msgid "Shop Now"
+msgstr ""
+
+#: includes/file-handler.php:115
+msgid "Good news! {product_name} is back in stock"
+msgstr ""
+
+#: includes/file-handler.php:116
+msgid "It is back in stock"
+msgstr ""
+
+#: includes/file-handler.php:117 includes/file-handler.php:123
+msgid "Hi {customer_name},"
+msgstr ""
+
+#: includes/file-handler.php:117
+msgid ""
+"Great news! {product_name} is back in stock and ready to order. You asked "
+"us to let you know, so you are among the first to hear."
+msgstr ""
+
+#: includes/file-handler.php:117
+msgid ""
+"Stock is limited and other customers are waiting too, so grab yours before "
+"it sells out again."
+msgstr ""
+
+#: includes/file-handler.php:117
+msgid "Thanks for waiting,"
+msgstr ""
+
+#: includes/file-handler.php:121
+msgid "You are on the waiting list for {product_name}"
+msgstr ""
+
+#: includes/file-handler.php:123
+msgid ""
+"Thanks for your interest in {product_name}. You are number {queue_position} "
+"in line, and we will email you as soon as it is back in stock. No need to "
+"keep checking."
+msgstr ""
+
+#: includes/file-handler.php:123
+msgid "Thank you,"
+msgstr ""
+
+#: includes/file-handler.php:128
+msgid "[{site_title}] New waiting list signup for {product_name}"
+msgstr ""
+
+#: includes/file-handler.php:129
+msgid "New waiting list signup"
+msgstr ""
+
+#: includes/file-handler.php:130
+msgid ""
+"{customer_email} joined the waiting list for {product_name}. "
+"{waiting_count} customers are now waiting for this product."
+msgstr ""
+
+#: includes/front/front-functions.php:39
+msgid ""
+"You are on the list! We will email you as soon as this product is back in "
+"stock."
+msgstr ""
+
+#: includes/front/front-functions.php:40
+msgid "You are already on the waiting list for this product."
+msgstr ""
+
+#: includes/front/front-functions.php:41
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: includes/front/front-functions.php:42
+msgid "Please accept the consent checkbox to join the waiting list."
+msgstr ""
+
+#: includes/front/front-functions.php:43
+msgid "Please log in to join the waiting list."
+msgstr ""
+
+#: includes/front/front-functions.php:44
+msgid "This product does not accept waiting list signups right now."
+msgstr ""
+
+#: includes/front/front-functions.php:45
+msgid "You have left the waiting list."
+msgstr ""
+
+#: includes/front/front-functions.php:46
+msgid "You have been unsubscribed from this waiting list."
+msgstr ""
+
+#: includes/front/front-functions.php:47
+msgid "Your session has expired. Please refresh the page and try again."
+msgstr ""
+
+#: includes/front/front-functions.php:99
+msgid "You are already on the list"
+msgstr ""
+
+#: includes/front/front-functions.php:156
+msgid "My Waiting List"
+msgstr ""
+
+#: includes/front/front-functions.php:253
+#: templates/front/product/join-waiting-list-template.php:183
+#. translators: %s: number of waiting customers.
+msgid "%s person is waiting for this product."
+msgstr ""
+
+#: includes/front/front-functions.php:255
+#. translators: %s: number of waiting customers.
+msgid "%s people are waiting for this product."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:31
+msgid "Form Content"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:32
+msgid ""
+"The words customers see on sold out products. Clear, short copy converts "
+"best."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:35
+msgid "Title"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:35
+msgid "Bold line at the top of the form."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:36
+msgid "Description"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:36
+msgid "One short sentence under the title. Leave empty to hide it."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:37
+#: templates/admin/emails/email-settings-template.php:36
+msgid "Button Text"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:37
+msgid "Default: Notify Me."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:38
+msgid "Reassurance Note"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:38
+msgid ""
+"Small line under the email field that tells guests what to expect. Leave "
+"empty to hide it."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:39
+msgid "Email Placeholder"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:39
+msgid "Hint inside the email field shown to guests."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:40
+msgid "Leave Text"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:40
+msgid "Link shown to logged-in customers who already joined, and on My Account."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:45
+msgid "After Joining"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:46
+msgid "The form turns into a short confirmation once the customer is on the list."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:49
+msgid "Confirmation Title"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:49
+msgid "Default: You are on the list."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:50
+msgid "Confirmation Message"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:50
+msgid ""
+"Use {position} for the customer's place in line. Shown when \"Place in "
+"Line\" is on."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:55
+msgid "Where It Shows"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:56
+msgid ""
+"The form shows on sold out product pages and anywhere you place the "
+"shortcode."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:61
+msgid "Capture demand on shop and category pages"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:62
+msgid ""
+"Pro swaps \"Read more\" for a \"Notify Me\" button on every product grid. "
+"It opens a quick signup window, so customers join without leaving the page."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:64
+msgid "Classic shop loops and WooCommerce block grids"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:65
+msgid "Variation picker inside the window"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:66
+msgid "Works with full page caching"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:73
+msgid "Extra Fields"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:74
+msgid "Optional details that help you plan restocks."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:79
+msgid "Know how many units to reorder"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:80
+msgid ""
+"Pro asks customers how many units they want and, if you like, their phone "
+"number for SMS tools."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:82
+msgid "\"Units wanted\" totals on the Products screen"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:83
+msgid "Optional or required phone field"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:90
+msgid "Social Proof & Expectations"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:91
+msgid "Show demand and set expectations. Both build urgency and trust."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:94
+msgid "Waiting Count"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:94
+msgid ""
+"Displays \"12 people are waiting for this product.\" Hidden while nobody is "
+"waiting."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:95
+msgid ""
+"Customers are emailed first come first served, so their number shows they "
+"are not forgotten."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:96
+msgid "Restock Date"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:96
+msgid "Show the expected restock date and note"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:96
+msgid ""
+"Set a date and a short note per product or variation. Past dates are hidden "
+"automatically."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:101
+msgid "Privacy & Spam Protection"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:102
+msgid ""
+"Every form has invisible spam protection. Add these for GDPR stores or if "
+"you see fake signups."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:105
+msgid "Double Opt-in"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:105
+msgid "Guests confirm their email before joining"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:105
+msgid "Stops mistyped and fake emails. Logged-in customers skip this step."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:106
+msgid "Require a consent checkbox to join"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:106
+msgid ""
+"Customers must tick the box below the form before they can join. "
+"Recommended for stores selling in the EU and UK."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:109
+msgid "Consent Text"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:110
+msgid "Basic HTML is allowed, so you can link your privacy policy."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:118
+msgid "Style"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:119
+msgid ""
+"The form adapts to your theme colors. Pick a button color to match your "
+"brand."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:125
+msgid "Form Style"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:126
+msgid ""
+"Card adds a soft background and border. Minimal blends into the product "
+"summary."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:130
+msgid "Card"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:131
+msgid "Minimal"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:136
+msgid "Header Icon"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:136
+msgid "Show the bell icon next to the title"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:136
+msgid "A thin line icon drawn in your button color."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:139
+msgid "Button Color"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:140
+msgid "Background of the Notify Me buttons."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:146
+msgid "Button Text Color"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:147
+msgid "Text and icon color on the Notify Me buttons."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:151
+msgid "Custom Messages"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:151
+msgid "Use your own style for form messages"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:151
+msgid "Replaces the built-in success and error message style."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:154
+msgid "Message Background"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:155
+msgid "Background of success and error messages."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:161
+msgid "Message Text Color"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:162
+msgid "Text color of the messages."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:168
+msgid "Message Font Size"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:169
+msgid "A CSS size such as 16px or 1em."
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:176
+msgid "Message Corner Radius"
+msgstr ""
+
+#: templates/admin/configuration/display-configuration-template.php:177
+msgid "A CSS size such as 6px."
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:37
+msgid ""
+"Choose who can join a waiting list and which products accept signups. Out "
+"of stock products accept signups by default."
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:44
+#: templates/admin/emails/email-configuration-template.php:41
+msgid "Enable/Disable"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:45
+msgid "Show the waiting list on your store"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:46
+msgid ""
+"When off, the signup form and My Account page are hidden. Subscribers and "
+"restock emails are kept."
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:52
+msgid "Require Login"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:53
+msgid "Only logged-in customers can join"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:54
+msgid ""
+"Guests see a login button instead of the email field. Useful for B2B or "
+"member-only stores."
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:60
+msgid "Backorder Products"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:61
+msgid "Also show the form on products available on backorder"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:62
+msgid ""
+"Customers who prefer not to backorder can wait until the product is "
+"physically in stock."
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:68
+msgid "Excluded Products"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:69
+msgid ""
+"Products and variations that never show the waiting list form, for example "
+"discontinued items."
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:77
+msgid "Excluded Categories"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:78
+msgid "Every product in these categories is excluded from the waiting list."
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:86
+msgid "My Account Endpoint"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:87
+msgid "URL slug of the \"My Waiting List\" page in My Account. Default: waitlist."
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:95
+msgid "Data"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:96
+msgid "Keep the subscribers table lean and privacy friendly."
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:101
+msgid "Clean up old entries automatically"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:102
+msgid ""
+"Pro deletes notified, purchased and unsubscribed entries after the number "
+"of days you set. Waiting customers are never touched."
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:104
+msgid "Your own retention period in days"
+msgstr ""
+
+#: templates/admin/configuration/general-configuration-template.php:105
+msgid "Runs quietly in the background every hour"
+msgstr ""
+
+#: templates/admin/configuration/restock-configuration-template.php:44
+msgid ""
+"When stock returns, waiting customers are emailed in the background in "
+"batches of 50, first come first served. Works for every stock change: "
+"product edits, imports, the REST API, refunds and cancelled orders."
+msgstr ""
+
+#: templates/admin/configuration/restock-configuration-template.php:49
+msgid "Automatic Emails"
+msgstr ""
+
+#: templates/admin/configuration/restock-configuration-template.php:50
+msgid "Email waiting customers automatically when stock returns"
+msgstr ""
+
+#: templates/admin/configuration/restock-configuration-template.php:51
+msgid "Turn off to send restock emails yourself from the Products screen."
+msgstr ""
+
+#: templates/admin/configuration/restock-configuration-template.php:55
+msgid "Minimum Stock"
+msgstr ""
+
+#: templates/admin/configuration/restock-configuration-template.php:55
+msgid "Wait until at least this many units are available before emailing anyone."
+msgstr ""
+
+#: templates/admin/configuration/restock-configuration-template.php:56
+msgid "Customers per Unit"
+msgstr ""
+
+#: templates/admin/configuration/restock-configuration-template.php:56
+msgid ""
+"Email only this many customers for every unit that comes back, so 3 units "
+"never trigger 200 emails. The rest stay in line for the next restock."
+msgstr ""
+
+#: templates/admin/configuration/restock-configuration-template.php:57
+msgid "Emails per Batch"
+msgstr ""
+
+#: templates/admin/configuration/restock-configuration-template.php:57
+msgid "Tune the background batch size to your mail server limits."
+msgstr ""
+
+#: templates/admin/configuration/restock-configuration-template.php:62
+msgid "Early Access Window"
+msgstr ""
+
+#: templates/admin/configuration/restock-configuration-template.php:63
+msgid "Reward the people who waited."
+msgstr ""
+
+#: templates/admin/configuration/restock-configuration-template.php:68
+msgid "Give your waiting list first dibs on every restock"
+msgstr ""
+
+#: templates/admin/configuration/restock-configuration-template.php:69
+msgid ""
+"Pro reserves the product for notified customers for the hours you choose. "
+"Everyone else can still join the waiting list, then the product opens to "
+"all automatically."
+msgstr ""
+
+#: templates/admin/configuration/restock-configuration-template.php:71
+msgid "Only customers who got the email can buy during the window"
+msgstr ""
+
+#: templates/admin/configuration/restock-configuration-template.php:72
+msgid "A clear \"Reserved until\" notice on the product page"
+msgstr ""
+
+#: templates/admin/configuration/restock-configuration-template.php:73
+msgid "Opens to everyone on its own when the window ends"
+msgstr ""
+
+#: templates/admin/configuration/shortcodes-configuration-template.php:31
+msgid "Shortcode Settings"
+msgstr ""
+
+#: templates/admin/configuration/shortcodes-configuration-template.php:32
+msgid ""
+"Place the signup form anywhere: page builders, custom product templates or "
+"landing pages."
+msgstr ""
+
+#: templates/admin/configuration/shortcodes-configuration-template.php:37
+msgid "Form Shortcode"
+msgstr ""
+
+#: templates/admin/configuration/shortcodes-configuration-template.php:38
+msgid ""
+"Default: [ddwcwl_waiting_list_template_shortcode]. Change it only if it "
+"clashes with another plugin."
+msgstr ""
+
+#: templates/admin/configuration/shortcodes-configuration-template.php:44
+msgid "Usage"
+msgstr ""
+
+#: templates/admin/configuration/shortcodes-configuration-template.php:45
+msgid "on a single product page, or"
+msgstr ""
+
+#: templates/admin/configuration/shortcodes-configuration-template.php:45
+msgid "anywhere else. The form only appears while the product is out of stock."
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:85
+#. translators: %s: admin display name.
+msgid "Welcome back, %s! 👋🏻"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:86
+msgid ""
+"See who is waiting, what they want most, and which products are ready to "
+"sell again."
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:90
+msgid "Waiting Now"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:91
+msgid "New Signups"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:92
+#: templates/admin/dashboard/dashboard-template.php:111
+msgid "Emails Sent"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:93
+msgid "Products in Demand"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:98
+msgid "Waiting List Activity"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:106
+msgid "Signups"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:116
+msgid "No waiting list activity in this period"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:117
+msgid "Signups and restock emails will be charted here."
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:122
+msgid "Subscribers by Status"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:124
+msgid "All time"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:130
+#: templates/admin/subscribers/subscribers-list-template.php:355
+msgid "No subscribers yet"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:131
+msgid "Statuses appear once customers join a waiting list."
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:137
+msgid "Most Wanted Products"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:142
+msgid "Ready to Sell"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:147
+msgid "Recent Signups"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:152
+msgid "Recovered Sales"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:170
+msgid "See exactly how much revenue your waiting list brings back"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:171
+msgid ""
+"Pro links every order to the restock email that won it, so you know which "
+"products to reorder first."
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:173
+msgid "Recovered orders and revenue, compared with the previous period"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:174
+msgid "Email to click to purchase funnel"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:175
+msgid "Revenue per product on the Products screen"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:205
+#. translators: %s: waiting customers.
+msgid "%s waiting"
+msgid_plural "%s waiting"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/admin/dashboard/dashboard-template.php:211
+msgid "Email now"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:225
+msgid "Nobody is waiting right now. Your most requested products will rank here."
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:234
+msgid ""
+"All caught up. In-stock products with customers still waiting appear here, "
+"ready to email."
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:244
+msgid "New signups show up here the moment a customer joins."
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:244
+msgid "No signups yet"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:281
+msgid "Nothing here yet"
+msgstr ""
+
+#: templates/admin/emails/email-configuration-template.php:52
+msgid "Recipients"
+msgstr ""
+
+#: templates/admin/emails/email-configuration-template.php:54
+#. translators: %s: site admin email.
+msgid "Comma separated. Leave empty to use the site admin email (%s)."
+msgstr ""
+
+#: templates/admin/emails/email-configuration-template.php:67
+msgid "Subject"
+msgstr ""
+
+#: templates/admin/emails/email-configuration-template.php:68
+msgid "Leave empty to restore the default."
+msgstr ""
+
+#: templates/admin/emails/email-configuration-template.php:77
+msgid "Heading"
+msgstr ""
+
+#: templates/admin/emails/email-configuration-template.php:78
+msgid "The large title at the top of the email."
+msgstr ""
+
+#: templates/admin/emails/email-configuration-template.php:97
+msgid "Placeholders"
+msgstr ""
+
+#: templates/admin/emails/email-configuration-template.php:128
+msgid ""
+"The email that recovers sales. Sent to waiting customers, first come first "
+"served, when the product is back. A product card and a shop button are "
+"added below your content."
+msgstr ""
+
+#: templates/admin/emails/email-configuration-template.php:129
+msgid "Email waiting customers when the product is back in stock"
+msgstr ""
+
+#: templates/admin/emails/email-configuration-template.php:130
+msgid ""
+"Main message of the email. The product card and shop button are added "
+"automatically."
+msgstr ""
+
+#: templates/admin/emails/email-configuration-template.php:135
+msgid ""
+"Sent right after a customer joins, so they know their spot is saved and do "
+"not have to keep checking. Includes a one-click leave link."
+msgstr ""
+
+#: templates/admin/emails/email-configuration-template.php:136
+msgid "Confirm every new signup by email"
+msgstr ""
+
+#: templates/admin/emails/email-configuration-template.php:137
+msgid "The product card and leave link are added automatically."
+msgstr ""
+
+#: templates/admin/emails/email-configuration-template.php:142
+msgid ""
+"Tells your team about every new signup with the current demand, handy for "
+"deciding what to reorder. Off by default because busy stores get many "
+"signups."
+msgstr ""
+
+#: templates/admin/emails/email-configuration-template.php:143
+msgid "Email the store team about every new signup"
+msgstr ""
+
+#: templates/admin/emails/email-configuration-template.php:144
+msgid "The product card and a link to its subscribers are added automatically."
+msgstr ""
+
+#: templates/admin/emails/email-configuration-template.php:165
+msgid ""
+"Click a placeholder to insert it where your cursor is, in the subject, "
+"heading or content."
+msgstr ""
+
+#: templates/admin/emails/email-configuration-template.php:180
+msgid "Preview"
+msgstr ""
+
+#: templates/admin/emails/email-configuration-template.php:182
+msgid "Test recipient"
+msgstr ""
+
+#: templates/admin/emails/email-configuration-template.php:184
+msgid "Send test"
+msgstr ""
+
+#: templates/admin/emails/email-configuration-template.php:187
+msgid ""
+"Preview and test use your latest saved settings and sample data from your "
+"store."
+msgstr ""
+
+#: templates/admin/emails/email-settings-template.php:31
+#. translators: %s: link to WooCommerce email settings.
+msgid ""
+"Applies to every waiting list email. Logo, colors, footer and sender name "
+"come from your %s, so these emails match the rest of your store."
+msgstr ""
+
+#: templates/admin/emails/email-settings-template.php:31
+msgid "WooCommerce email settings"
+msgstr ""
+
+#: templates/admin/emails/email-settings-template.php:37
+msgid "Call to action in the back-in-stock email. Default: Shop Now."
+msgstr ""
+
+#: templates/admin/emails/email-settings-template.php:43
+msgid "Accent Color"
+msgstr ""
+
+#: templates/admin/emails/email-settings-template.php:44
+msgid "Brand color of the email button."
+msgstr ""
+
+#: templates/admin/products/products-list-template.php:78
+msgid "Stock"
+msgstr ""
+
+#: templates/admin/products/products-list-template.php:81
+msgid "Recovered Revenue"
+msgstr ""
+
+#: templates/admin/products/products-list-template.php:82
+msgid "Last Signup"
+msgstr ""
+
+#: templates/admin/products/products-list-template.php:106
+msgid "Email all waiting customers"
+msgstr ""
+
+#: templates/admin/products/products-list-template.php:107
+msgid "Clear waiting list"
+msgstr ""
+
+#: templates/admin/products/products-list-template.php:154
+#: templates/admin/subscribers/subscribers-list-template.php:278
+msgid "Product deleted"
+msgstr ""
+
+#: templates/admin/products/products-list-template.php:160
+msgid "Edit product"
+msgstr ""
+
+#: templates/admin/products/products-list-template.php:161
+msgid "Email waiting customers"
+msgstr ""
+
+#: templates/admin/products/products-list-template.php:162
+msgid "Clear list"
+msgstr ""
+
+#: templates/admin/products/products-list-template.php:188
+#: templates/admin/subscribers/subscribers-list-template.php:282
+#: templates/front/myaccount/waiting-list-template.php:111
+msgid "In stock"
+msgstr ""
+
+#: templates/admin/products/products-list-template.php:189
+#: templates/admin/subscribers/subscribers-list-template.php:283
+#: templates/front/myaccount/waiting-list-template.php:111
+msgid "Out of stock"
+msgstr ""
+
+#: templates/admin/products/products-list-template.php:225
+msgid "No matching products"
+msgstr ""
+
+#: templates/admin/products/products-list-template.php:225
+msgid "No demand yet"
+msgstr ""
+
+#: templates/admin/products/products-list-template.php:226
+msgid "No product with a waiting list matches your search."
+msgstr ""
+
+#: templates/admin/products/products-list-template.php:226
+msgid ""
+"Products show up here with their waiting customers as soon as someone joins "
+"a waiting list."
+msgstr ""
+
+#: templates/admin/products/products-list-template.php:236
+msgid "Show all products"
+msgstr ""
+
+#: templates/admin/products/products-list-template.php:236
+msgid "View sold out products"
+msgstr ""
+
+#: templates/admin/subscribers/subscribers-list-template.php:108
+msgid "Customer"
+msgstr ""
+
+#: templates/admin/subscribers/subscribers-list-template.php:111
+msgid "Joined"
+msgstr ""
+
+#: templates/admin/subscribers/subscribers-list-template.php:140
+msgid "All"
+msgstr ""
+
+#: templates/admin/subscribers/subscribers-list-template.php:176
+msgid "Send back-in-stock email"
+msgstr ""
+
+#: templates/admin/subscribers/subscribers-list-template.php:177
+msgid "Move back to waiting"
+msgstr ""
+
+#: templates/admin/subscribers/subscribers-list-template.php:178
+#: templates/admin/subscribers/subscribers-list-template.php:263
+msgid "Delete"
+msgstr ""
+
+#: templates/admin/subscribers/subscribers-list-template.php:198
+#. translators: %s: product name.
+msgid "Showing subscribers for %s"
+msgstr ""
+
+#: templates/admin/subscribers/subscribers-list-template.php:200
+msgid "Clear filter"
+msgstr ""
+
+#: templates/admin/subscribers/subscribers-list-template.php:248
+msgid "Guest"
+msgstr ""
+
+#: templates/admin/subscribers/subscribers-list-template.php:256
+msgid "Send email"
+msgstr ""
+
+#: templates/admin/subscribers/subscribers-list-template.php:260
+msgid "Move to waiting"
+msgstr ""
+
+#: templates/admin/subscribers/subscribers-list-template.php:305
+#: templates/front/myaccount/waiting-list-template.php:117
+#. translators: %s: place in line.
+msgid "Number %s in line"
+msgstr ""
+
+#: templates/admin/subscribers/subscribers-list-template.php:355
+msgid "No matching subscribers"
+msgstr ""
+
+#: templates/admin/subscribers/subscribers-list-template.php:356
+msgid "Nobody matches these filters. Try another status or clear the search."
+msgstr ""
+
+#: templates/admin/subscribers/subscribers-list-template.php:356
+msgid ""
+"Customers appear here as soon as they join a waiting list on a sold out "
+"product. You can also add them by hand."
+msgstr ""
+
+#: templates/admin/subscribers/subscribers-list-template.php:366
+msgid "Show all subscribers"
+msgstr ""
+
+#: templates/admin/subscribers/subscribers-list-template.php:366
+msgid "Customize the signup form"
+msgstr ""
+
+#: templates/front/myaccount/waiting-list-template.php:79
+msgid "Products you are waiting for"
+msgstr ""
+
+#: templates/front/myaccount/waiting-list-template.php:81
+#: templates/front/myaccount/waiting-list-template.php:82
+msgid "Search products"
+msgstr ""
+
+#: templates/front/myaccount/waiting-list-template.php:90
+msgid "No matches"
+msgstr ""
+
+#: templates/front/myaccount/waiting-list-template.php:90
+msgid "Nothing on your list yet"
+msgstr ""
+
+#: templates/front/myaccount/waiting-list-template.php:91
+msgid "No waiting list entries match your search. Try another product name."
+msgstr ""
+
+#: templates/front/myaccount/waiting-list-template.php:91
+msgid ""
+"When a product you love is sold out, tap \"Notify Me\" on its page and we "
+"will email you as soon as it is back."
+msgstr ""
+
+#: templates/front/myaccount/waiting-list-template.php:92
+msgid "Clear search"
+msgstr ""
+
+#: templates/front/myaccount/waiting-list-template.php:92
+msgid "Browse the shop"
+msgstr ""
+
+#: templates/front/myaccount/waiting-list-template.php:124
+#. translators: %s: date the customer joined.
+msgid "Joined %s"
+msgstr ""
+
+#: templates/front/myaccount/waiting-list-template.php:139
+msgid "Buy now"
+msgstr ""
+
+#: templates/front/myaccount/waiting-list-template.php:149
+msgid "Previous"
+msgstr ""
+
+#: templates/front/myaccount/waiting-list-template.php:152
+msgid "Next"
+msgstr ""
+
+#: templates/front/product/join-waiting-list-template.php:199
+msgid "Log in to get notified"
+msgstr ""
+
+#: templates/front/product/join-waiting-list-template.php:208
+msgid "Leave this field empty"
+msgstr ""
+
+#: templates/front/product/join-waiting-list-template.php:212
+msgid "Option"
+msgstr ""
+
+#: templates/front/product/join-waiting-list-template.php:226
+#. translators: %s: customer email.
+msgid "We will email %s."
+msgstr ""
+
+#: templates/front/product/join-waiting-list-template.php:230
+msgid "Email address"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://devdiggers.com/product/woocommerce-waitlist/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Turn sold-out products into sales. Shoppers join a back-in-stock waitlist "
+"on any simple or variable product, see their place in line, and get an "
+"email the moment stock returns."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "DevDiggers"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://devdiggers.com/"
+msgstr ""
