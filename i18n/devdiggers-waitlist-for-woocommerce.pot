@@ -2,10 +2,10 @@
 # This file is distributed under the GPLv3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: DevDiggers Waitlist for WooCommerce 1.0.0\n"
+"Project-Id-Version: DevDiggers Waitlist for WooCommerce 1.1.0\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/devdiggers-waitlist-for-woocommerce\n"
-"POT-Creation-Date: 2026-10-24 14:53:29+00:00\n"
+"POT-Creation-Date: 2026-11-24 17:15:50+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -83,6 +83,8 @@ msgstr ""
 #: includes/admin/admin-functions.php:183 includes/admin/setup-wizard.php:33
 #: includes/admin-dashboard.php:138 includes/admin-dashboard.php:139
 #: includes/admin-dashboard.php:141
+#: includes/integrations/mcp-integration.php:66
+#: includes/integrations/mcp-integration.php:89
 msgid "Waitlist"
 msgstr ""
 
@@ -643,100 +645,100 @@ msgstr ""
 msgid "Changed your mind? Leave the waiting list"
 msgstr ""
 
-#: includes/file-handler.php:73
+#: includes/file-handler.php:75
 msgid "Notify me when it is back"
 msgstr ""
 
-#: includes/file-handler.php:74
+#: includes/file-handler.php:76
 msgid "This item is sold out right now. We will let you know the moment it is back."
 msgstr ""
 
-#: includes/file-handler.php:75
+#: includes/file-handler.php:77
 msgid "One email when it is back. No spam, unsubscribe anytime."
 msgstr ""
 
-#: includes/file-handler.php:76
+#: includes/file-handler.php:78
 msgid "Notify Me"
 msgstr ""
 
-#: includes/file-handler.php:77
+#: includes/file-handler.php:79
 msgid "Your email address"
 msgstr ""
 
-#: includes/file-handler.php:78
+#: includes/file-handler.php:80
 msgid "Leave waiting list"
 msgstr ""
 
-#: includes/file-handler.php:79 includes/file-handler.php:122
+#: includes/file-handler.php:81 includes/file-handler.php:124
 #: includes/front/front-functions.php:257
 msgid "You are on the list"
 msgstr ""
 
-#: includes/file-handler.php:81
+#: includes/file-handler.php:83
 #. translators: {position} is replaced with the customer's place in line.
 msgid "You are number {position} in line. We will email you the moment it is back."
 msgstr ""
 
-#: includes/file-handler.php:94
+#: includes/file-handler.php:96
 msgid "I agree to receive an email when this product is back in stock."
 msgstr ""
 
-#: includes/file-handler.php:98
+#: includes/file-handler.php:100
 msgid "Shop Now"
 msgstr ""
 
-#: includes/file-handler.php:115
+#: includes/file-handler.php:117
 msgid "Good news! {product_name} is back in stock"
 msgstr ""
 
-#: includes/file-handler.php:116
+#: includes/file-handler.php:118
 msgid "It is back in stock"
 msgstr ""
 
-#: includes/file-handler.php:117 includes/file-handler.php:123
+#: includes/file-handler.php:119 includes/file-handler.php:125
 msgid "Hi {customer_name},"
 msgstr ""
 
-#: includes/file-handler.php:117
+#: includes/file-handler.php:119
 msgid ""
 "Great news! {product_name} is back in stock and ready to order. You asked "
 "us to let you know, so you are among the first to hear."
 msgstr ""
 
-#: includes/file-handler.php:117
+#: includes/file-handler.php:119
 msgid ""
 "Stock is limited and other customers are waiting too, so grab yours before "
 "it sells out again."
 msgstr ""
 
-#: includes/file-handler.php:117
+#: includes/file-handler.php:119
 msgid "Thanks for waiting,"
 msgstr ""
 
-#: includes/file-handler.php:121
+#: includes/file-handler.php:123
 msgid "You are on the waiting list for {product_name}"
 msgstr ""
 
-#: includes/file-handler.php:123
+#: includes/file-handler.php:125
 msgid ""
 "Thanks for your interest in {product_name}. You are number {queue_position} "
 "in line, and we will email you as soon as it is back in stock. No need to "
 "keep checking."
 msgstr ""
 
-#: includes/file-handler.php:123
+#: includes/file-handler.php:125
 msgid "Thank you,"
 msgstr ""
 
-#: includes/file-handler.php:128
+#: includes/file-handler.php:130
 msgid "[{site_title}] New waiting list signup for {product_name}"
 msgstr ""
 
-#: includes/file-handler.php:129
+#: includes/file-handler.php:131
 msgid "New waiting list signup"
 msgstr ""
 
-#: includes/file-handler.php:130
+#: includes/file-handler.php:132
 msgid ""
 "{customer_email} joined the waiting list for {product_name}. "
 "{waiting_count} customers are now waiting for this product."
@@ -797,6 +799,234 @@ msgstr ""
 #: includes/front/front-functions.php:255
 #. translators: %s: number of waiting customers.
 msgid "%s people are waiting for this product."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:67
+msgid ""
+"Ask which sold out products customers are waiting for, who is on a "
+"product's waitlist, which lists a customer joined and which restocked "
+"products still have people to email."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:90
+msgid "Back in stock waitlists: demand per product, subscribers and restock emails."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:179
+msgid "Waitlist overview"
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:180
+msgid ""
+"How the waitlist is doing, the same numbers as the Waitlist dashboard: "
+"customers waiting now, products with waiting customers, signups and back in "
+"stock emails sent in a date range compared with the previous period, the "
+"most wanted products, and products already back in stock that still have "
+"customers waiting (ready to notify). Start here."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:184
+msgid ""
+"First day, Y-m-d in the store timezone. Defaults to 29 days before "
+"\"before\"."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:185
+msgid "Last day, Y-m-d. Defaults to today."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:201
+msgid "List waitlisted products"
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:202
+msgid ""
+"Products and variations that have a waitlist, most wanted first (as on the "
+"Waitlist > Products screen): customers waiting, already notified, total "
+"signups, last signup, and the current stock status. Use stock "
+"\"out_of_stock\" for \"what should I reorder\" and \"in_stock\" for "
+"restocked products that still have customers waiting. Variations are listed "
+"on their own with their own ID."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:208
+msgid "Part of the product name."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:228
+msgid "Get a product's waitlist"
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:229
+msgid ""
+"The waitlist of one product or variation: stock, whether it accepts signups "
+"now (and why not), subscriber counts per status, waiting customers per "
+"variation for a variable product, and the next customers in line (oldest "
+"first). Product IDs come from waitlist-list-products."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:231
+msgid "Product or variation ID."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:244
+msgid "List subscribers"
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:245
+msgid ""
+"Waitlist entries, newest first (as on the Waitlist > Subscribers screen): "
+"product, customer email and name, status, place in line while waiting, date "
+"joined and date emailed. Filter by product (a parent product ID includes "
+"its variations), status, a customer's email or user ID (every list that "
+"customer joined), or search an email or product name."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:257
+msgid "Exact customer email."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:259
+msgid "WordPress user ID of the customer; their account email is used."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:262
+msgid "Part of an email or product name."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:272
+msgid "Waitlist settings"
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:273
+msgid ""
+"The waitlist settings that decide who can join and when emails go out: on / "
+"off, login required, backorders, excluded products and categories, "
+"automatic restock emails and which emails are switched on. Use it to "
+"explain why a form does not show or why no email went out."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:281
+#: includes/integrations/mcp-integration.php:911
+msgid "Restock priorities report"
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:282
+msgid ""
+"Which sold out products to reorder first based on waitlist demand, which "
+"restocked products still have customers to email, and how signups are "
+"trending."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:288
+msgid "How many products to rank. Defaults to 10."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:300
+msgid "Send back in stock emails"
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:301
+msgid ""
+"Email everyone waiting for a product or variation that is back in stock, "
+"oldest signup first, in background batches: the \"Email all\" action on the "
+"Waitlist > Products screen. Only works when the product is published and in "
+"stock and has waiting customers; a variable product needs the variation ID. "
+"Customers who are emailed move to \"notified\"."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:303
+msgid "Product or variation ID from waitlist-list-products."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:314
+msgid "Remove a subscriber"
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:315
+msgid ""
+"Take a customer off a product's waitlist, as their own unsubscribe link "
+"does: the entry is marked \"unsubscribed\", gets no more emails and leaves "
+"the queue, and stays in the history. The subscriber ID comes from "
+"waitlist-list-subscribers."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:532
+msgid ""
+"Product not found. Use waitlist-list-products to find the product or "
+"variation ID."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:556
+msgid "The start date must be before the end date."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:655
+msgid "(deleted product)"
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:735
+msgid ""
+"Customer not found. Pass their email instead, or look the user ID up with "
+"the WooCommerce customer tools."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:798
+#. translators: %s: variation IDs.
+msgid "Customers wait for a variation. Use one of these variation IDs: %s"
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:804
+msgid "Nobody is waiting for this product."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:808
+msgid ""
+"This product is not published and in stock, so a back in stock email would "
+"send customers to a sold out page. Restock it first."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:813
+msgid ""
+"The emails could not be queued. Try \"Email all\" on the Waitlist > "
+"Products screen."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:839
+msgid "Subscriber not found. Use waitlist-list-subscribers to find the ID."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:846
+#. translators: %s: subscriber status.
+msgid "This entry is already closed (status \"%s\"), so there is nothing to remove."
+msgstr ""
+
+#: includes/integrations/mcp-integration.php:891
+#. translators: %d: number of products.
+msgid ""
+"Write my restock priorities report from the waitlist.\n"
+"\n"
+"Use the Waitlist tools:\n"
+"1. waitlist-overview for the last 30 days: customers waiting, signups and "
+"emails against the previous period, most wanted products and products ready "
+"to notify.\n"
+"2. waitlist-list-products with stock \"out_of_stock\", orderby \"waiting\", "
+"per_page %d.\n"
+"3. waitlist-list-products with stock \"in_stock\" for restocked products "
+"that still have customers waiting.\n"
+"4. waitlist-get-product for the top 3 sold out products, to see which "
+"variations people want.\n"
+"\n"
+"Then write a short report for the store owner:\n"
+"- Headline: customers waiting now and how signups are trending.\n"
+"- Reorder first: the sold out products ranked by customers waiting, with "
+"variation detail where it matters.\n"
+"- Waiting on you: products already back in stock with customers still "
+"waiting; suggest sending the back in stock emails (waitlist-notify-product, "
+"only if the owner agrees).\n"
+"- Up to three actions for this week.\n"
+"Keep it under 250 words, use the product names and IDs the tools return, "
+"and say plainly when nobody is waiting."
 msgstr ""
 
 #: templates/admin/configuration/display-configuration-template.php:31
@@ -1331,135 +1561,148 @@ msgstr ""
 msgid "anywhere else. The form only appears while the product is out of stock."
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:85
+#: templates/admin/dashboard/dashboard-template.php:93
 #. translators: %s: admin display name.
 msgid "Welcome back, %s! 👋🏻"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:86
+#: templates/admin/dashboard/dashboard-template.php:94
 msgid ""
 "See who is waiting, what they want most, and which products are ready to "
 "sell again."
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:90
+#: templates/admin/dashboard/dashboard-template.php:98
 msgid "Waiting Now"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:91
+#: templates/admin/dashboard/dashboard-template.php:98
+msgid "Right now, from any date"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:99
 msgid "New Signups"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:92
-#: templates/admin/dashboard/dashboard-template.php:111
+#: templates/admin/dashboard/dashboard-template.php:100
+#: templates/admin/dashboard/dashboard-template.php:119
 msgid "Emails Sent"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:93
+#: templates/admin/dashboard/dashboard-template.php:101
 msgid "Products in Demand"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:98
-msgid "Waiting List Activity"
+#: templates/admin/dashboard/dashboard-template.php:101
+msgid "With customers waiting now"
 msgstr ""
 
 #: templates/admin/dashboard/dashboard-template.php:106
+msgid "Waiting List Activity"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:114
 msgid "Signups"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:116
+#: templates/admin/dashboard/dashboard-template.php:124
 msgid "No waiting list activity in this period"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:117
+#: templates/admin/dashboard/dashboard-template.php:125
 msgid "Signups and restock emails will be charted here."
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:122
+#: templates/admin/dashboard/dashboard-template.php:130
 msgid "Subscribers by Status"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:124
+#: templates/admin/dashboard/dashboard-template.php:132
 msgid "All time"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:130
+#: templates/admin/dashboard/dashboard-template.php:138
 #: templates/admin/subscribers/subscribers-list-template.php:355
 msgid "No subscribers yet"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:131
+#: templates/admin/dashboard/dashboard-template.php:139
 msgid "Statuses appear once customers join a waiting list."
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:137
+#: templates/admin/dashboard/dashboard-template.php:145
 msgid "Most Wanted Products"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:142
+#: templates/admin/dashboard/dashboard-template.php:150
 msgid "Ready to Sell"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:147
+#: templates/admin/dashboard/dashboard-template.php:155
 msgid "Recent Signups"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:152
+#: templates/admin/dashboard/dashboard-template.php:160
 msgid "Recovered Sales"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:170
+#: templates/admin/dashboard/dashboard-template.php:178
 msgid "See exactly how much revenue your waiting list brings back"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:171
+#: templates/admin/dashboard/dashboard-template.php:179
 msgid ""
 "Pro links every order to the restock email that won it, so you know which "
 "products to reorder first."
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:173
+#: templates/admin/dashboard/dashboard-template.php:181
 msgid "Recovered orders and revenue, compared with the previous period"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:174
+#: templates/admin/dashboard/dashboard-template.php:182
 msgid "Email to click to purchase funnel"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:175
+#: templates/admin/dashboard/dashboard-template.php:183
 msgid "Revenue per product on the Products screen"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:205
+#: templates/admin/dashboard/dashboard-template.php:210
 #. translators: %s: waiting customers.
 msgid "%s waiting"
 msgid_plural "%s waiting"
 msgstr[0] ""
 msgstr[1] ""
 
-#: templates/admin/dashboard/dashboard-template.php:211
+#: templates/admin/dashboard/dashboard-template.php:235
 msgid "Email now"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:225
+#: templates/admin/dashboard/dashboard-template.php:248
 msgid "Nobody is waiting right now. Your most requested products will rank here."
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:234
+#: templates/admin/dashboard/dashboard-template.php:257
 msgid ""
 "All caught up. In-stock products with customers still waiting appear here, "
 "ready to email."
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:244
+#: templates/admin/dashboard/dashboard-template.php:267
 msgid "New signups show up here the moment a customer joins."
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:244
+#: templates/admin/dashboard/dashboard-template.php:267
 msgid "No signups yet"
 msgstr ""
 
-#: templates/admin/dashboard/dashboard-template.php:281
+#: templates/admin/dashboard/dashboard-template.php:277
+#. translators: %s: time since the signup, e.g. "5 days".
+msgid "%s ago"
+msgstr ""
+
+#: templates/admin/dashboard/dashboard-template.php:302
 msgid "Nothing here yet"
 msgstr ""
 

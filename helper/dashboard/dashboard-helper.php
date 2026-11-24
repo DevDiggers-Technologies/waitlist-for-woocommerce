@@ -46,14 +46,10 @@ if ( ! class_exists( 'DDWCWL_Dashboard_Helper' ) ) {
 
 			$summary = [
 				'waiting'  => [
-					'value'       => $counts['waiting'],
-					'change'      => 0,
-					'is_positive' => true,
+					'value' => $counts['waiting'],
 				],
 				'products' => [
-					'value'       => count( $this->subscribers->get_products_with_waiting() ),
-					'change'      => 0,
-					'is_positive' => true,
+					'value' => count( $this->subscribers->get_products_with_waiting() ),
 				],
 			];
 
@@ -62,6 +58,7 @@ if ( ! class_exists( 'DDWCWL_Dashboard_Helper' ) ) {
 					'value'       => $value,
 					'change'      => $this->get_change( $value, $before[ $key ] ),
 					'is_positive' => $value >= $before[ $key ],
+					'previous'    => $before[ $key ],
 				];
 			}
 
@@ -119,11 +116,11 @@ if ( ! class_exists( 'DDWCWL_Dashboard_Helper' ) ) {
 		 *
 		 * @param float $current  Current.
 		 * @param float $previous Previous.
-		 * @return float
+		 * @return float|null Null when the previous period had nothing ( no fake 100% ).
 		 */
 		protected function get_change( $current, $previous ) {
 			if ( $previous <= 0 ) {
-				return $current > 0 ? 100 : 0;
+				return null;
 			}
 
 			return round( ( $current - $previous ) / $previous * 100, 1 );

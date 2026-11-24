@@ -11,6 +11,7 @@ namespace DDWCWaitingList\Includes;
 use DDWCWaitingList\Includes\Admin;
 use DDWCWaitingList\Includes\Front;
 use DDWCWaitingList\Includes\Common;
+use DDWCWaitingList\Includes\Integrations;
 
 defined( 'ABSPATH' ) || exit();
 
@@ -26,6 +27,7 @@ if ( ! class_exists( 'DDWCWL_File_Handler' ) ) {
 			$this->ddwcwl_set_globals();
 
 			new Common\DDWCWL_Common_Hooks();
+			new Integrations\DDWCWL_MCP_Integration();
 
 			if ( is_admin() ) {
 				new DDWCWL_Admin_Dashboard();
