@@ -367,5 +367,17 @@ if ( ! class_exists( 'DDWCWL_Subscribers_List_Template' ) ) {
 				]
 			);
 		}
+
+		/**
+		 * The primary column prints its own row actions, toggle button included; skip the second toggle.
+		 *
+		 * @param object|array $item        Row.
+		 * @param string       $column_name Column.
+		 * @param string       $primary     Primary column.
+		 * @return string
+		 */
+		protected function handle_row_actions( $item, $column_name, $primary ) {
+			return '';
+		}
 	}
 }

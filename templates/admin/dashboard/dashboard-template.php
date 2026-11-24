@@ -46,18 +46,26 @@ if ( ! class_exists( 'DDWCWL_Dashboard_Template' ) ) {
 		 * @param string $title Title.
 		 * @param string $key   Summary key.
 		 * @param string $icon  Icon SVG.
+		 * @param string $note  Bottom line for a "right now" figure that has no period comparison.
 		 * @return array
 		 */
-		protected function card( $title, $key, $icon ) {
+		protected function card( $title, $key, $icon, $note = '' ) {
 			$item = $this->data['summary'][ $key ];
+			$card = [
+				'title'      => $title,
+				'value'      => $item['value'],
+				'value_type' => 'number',
+				'icon'       => $icon,
+			];
 
-			return [
-				'title'       => $title,
-				'value'       => $item['value'],
-				'value_type'  => 'number',
+			if ( $note ) {
+				return $card + [ 'note' => $note ];
+			}
+
+			return $card + [
 				'change'      => $item['change'],
 				'is_positive' => $item['is_positive'],
-				'icon'        => $icon,
+				'previous'    => number_format_i18n( (float) $item['previous'] ),
 			];
 		}
 
@@ -87,10 +95,10 @@ if ( ! class_exists( 'DDWCWL_Dashboard_Template' ) ) {
 						'date_range' => $this->data['date_range'],
 					],
 					'summary_cards' => [
-						$this->card( esc_html__( 'Waiting Now', 'devdiggers-waitlist-for-woocommerce' ), 'waiting', DDFW_SVG::get_svg_icon( 'users' ) ),
+						$this->card( esc_html__( 'Waiting Now', 'devdiggers-waitlist-for-woocommerce' ), 'waiting', DDFW_SVG::get_svg_icon( 'users' ), esc_html__( 'Right now, from any date', 'devdiggers-waitlist-for-woocommerce' ) ),
 						$this->card( esc_html__( 'New Signups', 'devdiggers-waitlist-for-woocommerce' ), 'signups', DDFW_SVG::get_svg_icon( 'bell-ring' ) ),
 						$this->card( esc_html__( 'Emails Sent', 'devdiggers-waitlist-for-woocommerce' ), 'notified', DDFW_SVG::get_svg_icon( 'mail-check' ) ),
-						$this->card( esc_html__( 'Products in Demand', 'devdiggers-waitlist-for-woocommerce' ), 'products', DDFW_SVG::get_svg_icon( 'package' ) ),
+						$this->card( esc_html__( 'Products in Demand', 'devdiggers-waitlist-for-woocommerce' ), 'products', DDFW_SVG::get_svg_icon( 'package' ), esc_html__( 'With customers waiting now', 'devdiggers-waitlist-for-woocommerce' ) ),
 					],
 					'charts'        => [
 						[
@@ -181,9 +189,9 @@ if ( ! class_exists( 'DDWCWL_Dashboard_Template' ) ) {
 		/**
 		 * Product list widget body.
 		 *
-		 * @param array  $rows     Rows with product and waiting.
+		 * @param array  $rows       Rows with product and waiting.
 		 * @param string $empty_text Empty text.
-		 * @param bool   $with_cta Show the "email now" action.
+		 * @param bool   $with_cta   Show the "email now" action.
 		 * @return void
 		 */
 		protected function render_product_rows( $rows, $empty_text, $with_cta = false ) {
@@ -191,25 +199,40 @@ if ( ! class_exists( 'DDWCWL_Dashboard_Template' ) ) {
 				$this->empty_state( $empty_text, 'package' );
 				return;
 			}
+
+			$items = [];
+
+			foreach ( $rows as $row ) {
+				$items[] = [
+					'url'   => admin_url( 'admin.php?page=' . DDWCWL_DASHBOARD_PAGE . '&menu=subscribers&status=waiting&product_id=' . $row['product']->get_id() ),
+					'title' => wp_strip_all_tags( $row['product']->get_formatted_name() ),
+					/* translators: %s: waiting customers. */
+					'meta'  => sprintf( _n( '%s waiting', '%s waiting', $row['waiting'], 'devdiggers-waitlist-for-woocommerce' ), number_format_i18n( $row['waiting'] ) ),
+					'image' => $row['product']->get_image_id() ? $row['product']->get_image( [ 72, 72 ] ) : '',
+					'cta'   => $with_cta ? wp_nonce_url( admin_url( 'admin.php?page=' . DDWCWL_DASHBOARD_PAGE . '&menu=products&ddwcwl_action=notify_all&product[]=' . $row['product']->get_id() ), 'ddwcwl_list_action', 'ddwcwl_nonce' ) : '',
+				];
+			}
+
+			if ( ! $with_cta ) {
+				DDFW_Dashboard::render_list( $items, $empty_text );
+				return;
+			}
+
+			// Same markup as DDFW_Dashboard::render_list(), with an action button the linked row cannot hold.
 			?>
-			<div class="ddwcwl-dash-items">
-				<?php foreach ( $rows as $row ) : ?>
-					<div class="ddwcwl-dash-item">
-						<a class="ddwcwl-dash-item-info" href="<?php echo esc_url( admin_url( 'admin.php?page=' . DDWCWL_DASHBOARD_PAGE . '&menu=subscribers&status=waiting&product_id=' . $row['product']->get_id() ) ); ?>">
-							<?php echo wp_kses_post( $row['product']->get_image( [ 36, 36 ] ) ); ?>
-							<span>
-								<strong><?php echo esc_html( wp_strip_all_tags( $row['product']->get_formatted_name() ) ); ?></strong>
-								<small>
-									<?php
-									/* translators: %s: waiting customers. */
-									echo esc_html( sprintf( _n( '%s waiting', '%s waiting', $row['waiting'], 'devdiggers-waitlist-for-woocommerce' ), number_format_i18n( $row['waiting'] ) ) );
-									?>
-								</small>
-							</span>
-						</a>
-						<?php if ( $with_cta ) : ?>
-							<a class="button button-small" href="<?php echo esc_url( wp_nonce_url( admin_url( 'admin.php?page=' . DDWCWL_DASHBOARD_PAGE . '&menu=products&ddwcwl_action=notify_all&product[]=' . $row['product']->get_id() ), 'ddwcwl_list_action', 'ddwcwl_nonce' ) ); ?>"><?php esc_html_e( 'Email now', 'devdiggers-waitlist-for-woocommerce' ); ?></a>
+			<div class="ddfw-dash-list">
+				<?php foreach ( $items as $item ) : ?>
+					<div class="ddfw-dash-list-item">
+						<?php if ( $item['image'] ) : ?>
+							<span class="ddfw-dash-list-avatar is-square"><?php echo wp_kses_post( $item['image'] ); ?></span>
+						<?php else : ?>
+							<span class="ddfw-dash-list-placeholder" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21"/></svg></span>
 						<?php endif; ?>
+						<span class="ddfw-dash-list-info">
+							<a class="ddfw-dash-list-title" href="<?php echo esc_url( $item['url'] ); ?>"><?php echo esc_html( $item['title'] ); ?></a>
+							<span class="ddfw-dash-list-meta"><?php echo esc_html( $item['meta'] ); ?></span>
+						</span>
+						<a class="button button-small" href="<?php echo esc_url( $item['cta'] ); ?>"><?php esc_html_e( 'Email now', 'devdiggers-waitlist-for-woocommerce' ); ?></a>
 					</div>
 				<?php endforeach; ?>
 			</div>
@@ -246,24 +269,22 @@ if ( ! class_exists( 'DDWCWL_Dashboard_Template' ) ) {
 			}
 
 			$labels = DDWCWL_Subscribers_Helper::get_status_labels();
-			?>
-			<div class="ddwcwl-dash-items">
-				<?php
-				foreach ( $this->data['recent'] as $row ) :
-					$product = wc_get_product( $row->product_id );
-					?>
-					<div class="ddwcwl-dash-item">
-						<span class="ddwcwl-dash-item-info">
-							<span>
-								<strong><?php echo esc_html( $row->email ); ?></strong>
-								<small><?php echo esc_html( ( $product ? wp_strip_all_tags( $product->get_name() ) : '' ) . ' · ' . human_time_diff( strtotime( $row->created_at ), current_time( 'timestamp' ) ) ); // phpcs:ignore WordPress.DateTime.CurrentTimeTimestamp.Requested -- Compared with a local-time column. ?></small>
-							</span>
-						</span>
-						<mark class="ddwcwl-status ddwcwl-status-<?php echo esc_attr( $row->status ); ?>"><?php echo esc_html( $labels[ $row->status ] ?? $row->status ); ?></mark>
-					</div>
-				<?php endforeach; ?>
-			</div>
-			<?php
+			$items  = [];
+
+			foreach ( $this->data['recent'] as $row ) {
+				$product = wc_get_product( $row->product_id );
+				/* translators: %s: time since the signup, e.g. "5 days". */
+				$ago     = sprintf( __( '%s ago', 'devdiggers-waitlist-for-woocommerce' ), human_time_diff( strtotime( $row->created_at ), current_time( 'timestamp' ) ) ); // phpcs:ignore WordPress.DateTime.CurrentTimeTimestamp.Requested -- Compared with a local-time column.
+				$items[] = [
+					'title' => $row->email,
+					'meta'  => ( $product ? wp_strip_all_tags( $product->get_name() ) . ' · ' : '' ) . $ago,
+					'image' => get_avatar_url( $row->email, [ 'size' => 72 ] ),
+					'shape' => 'round',
+					'value' => '<mark class="ddwcwl-status ddwcwl-status-' . esc_attr( $row->status ) . '">' . esc_html( $labels[ $row->status ] ?? $row->status ) . '</mark>',
+				];
+			}
+
+			DDFW_Dashboard::render_list( $items );
 		}
 
 		/**

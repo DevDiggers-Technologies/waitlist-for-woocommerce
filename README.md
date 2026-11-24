@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Requires | WordPress 6.5+, WooCommerce 8.0+, PHP 7.4+ |
 | Tested up to | WordPress 7.1, WooCommerce 11.2 |
 | License | GPLv3 or later |
@@ -20,6 +20,17 @@ A back in stock waitlist for WooCommerce. Shoppers join from sold out products (
 - Automatic restock emails on any stock change, sent in background batches of 50 through Action Scheduler.
 - Editable Back in Stock, Signup Confirmation and Admin Alert emails with preview and test send.
 - Dashboard, Subscribers and Products screens, a Waitlist column on the Products list, and a My Account page.
+
+### AI assistants (MCP)
+
+Ask Claude, ChatGPT, Cursor, VS Code or any MCP client about your waitlists in plain words: "Which sold out products should I reorder first?", "Who is waiting for this shirt in size M?", "What waitlists did this customer join?"
+
+- Tools for the waitlist overview (customers waiting, signups and emails against the previous period, most wanted products, restocked products with people still waiting), waitlisted products with stock status, one product's waitlist per variation, subscribers filtered by product, status or customer, and a safe settings summary
+- A Restock priorities report prompt
+- Optional: let the assistant send the back in stock emails for a restocked product or take a customer off a waitlist, logged under WooCommerce > Status > Logs (`ddwcwl-mcp`)
+- Same access as the Waitlist screens (`manage_woocommerce`); customers and visitors are refused
+- Managed in DevDiggers Plugins > AI & MCP: one MCP server for every DevDiggers plugin (`/wp-json/devdiggers/v1/mcp`), sign-in with OAuth (you click Allow in WordPress, nothing to copy), an on / off switch per plugin and per write tool, a Try panel on every tool and an activity log
+- Needs WordPress 6.9+ (Abilities API) and the MCP Adapter, which WooCommerce 10.3+ bundles
 
 Pro adds restock coupons, an early access window, reminder emails, shop page buttons, smart restock rules, restock dates, extra fields, double opt-in, revenue analytics, an email log, CSV import and export, webhooks and data retention. The free plugin contains none of that code; it only shows labelled previews.
 
@@ -44,6 +55,7 @@ Pro adds restock coupons, an early access window, reminder emails, shop page but
 | `ddwcwl_is_product_eligible` | filter | Whether a product accepts signups. |
 | `ddwcwl_message` | filter | Customer facing form messages. |
 | `ddwcwl_modify_menu_capability` | filter | Capability for the admin screens (default `manage_woocommerce`). |
+| `ddwcwl_mcp_abilities` | filter | Add, change or remove the AI assistant (MCP) tools, defined in `includes/integrations/mcp-integration.php` under `waitlist/`. |
 
 Email templates can be overridden by copying `templates/emails/` to `yourtheme/ddwc-waiting-list/emails/`.
 
@@ -60,6 +72,17 @@ npm run build:release         # zip without dev files (.distignore)
 Source lives in `src/`, built files in `assets/`.
 
 ## Changelog
+
+### 1.1.0
+AI assistants (MCP), clearer dashboard figures and DevDiggers framework 1.3.0.
+
+- New: AI assistants (MCP). Ask Claude, ChatGPT, Cursor, VS Code or any MCP client about your waitlists: the overview, waitlisted products, one product's waitlist per variation, subscribers and your settings, plus a Restock priorities report prompt.
+- New: Optional AI tools to send the back in stock emails for a restocked product or take a customer off a waitlist. They stay off until you allow them, and every change is logged under WooCommerce > Status > Logs.
+- New: DevDiggers Plugins > AI & MCP page. Connect Claude, ChatGPT, Claude Code, Codex, Cursor, VS Code or any MCP client by signing in and clicking Allow, with an on and off switch per plugin and per write tool, a Try panel and an activity log.
+- Improved: Dashboard cards show the real previous-period figure instead of a made-up 100% change when there was no earlier activity, and Waiting Now and Products in Demand say they count customers waiting right now.
+- Improved: Dashboard product lists match the other DevDiggers dashboards, with an image placeholder for products without a photo.
+- Improved: Updated the DevDiggers framework to 1.3.0. The title bar with Save stays visible on edit screens while you scroll on desktop, and admin charts and pickers keep working when a theme or plugin replaces the shared Select2 script.
+- Fixed: The Products and Subscribers lists no longer show a second row actions toggle on small screens.
 
 ### 1.0.0
 First release.
