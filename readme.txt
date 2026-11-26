@@ -9,7 +9,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.0
 WC tested up to: 11.2
-Stable tag: 1.1.0
+Stable tag: 1.0.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -218,15 +218,6 @@ Two third party libraries used by the admin screens ship unmodified under the MI
 
 == Changelog ==
 
-= 1.1.0 =
-* New: AI assistants (MCP). Ask Claude, ChatGPT, Cursor, VS Code or any MCP client about your waitlists: the overview, waitlisted products, one product's waitlist per variation, subscribers and your settings, plus a Restock priorities report prompt.
-* New: Optional AI tools to send the back in stock emails for a restocked product or take a customer off a waitlist. They stay off until you allow them, and every change is logged under WooCommerce > Status > Logs.
-* New: DevDiggers Plugins > AI & MCP page. Connect Claude, ChatGPT, Claude Code, Codex, Cursor, VS Code or any MCP client by signing in and clicking Allow, with an on and off switch per plugin and per write tool, a Try panel and an activity log.
-* Improved: Dashboard cards show the real previous-period figure instead of a made-up 100% change when there was no earlier activity, and Waiting Now and Products in Demand say they count customers waiting right now.
-* Improved: Dashboard product lists match the other DevDiggers dashboards, with an image placeholder for products without a photo.
-* Improved: Updated the DevDiggers framework to 1.3.0. The title bar with Save stays visible on edit screens while you scroll on desktop, and admin charts and pickers keep working when a theme or plugin replaces the shared Select2 script.
-* Fixed: The Products and Subscribers lists no longer show a second row actions toggle on small screens.
-
 = 1.0.0 =
 * New: Waitlist form on out of stock simple products and each sold out variation, in classic and block themes.
 * New: Guest and logged in signups, with optional login requirement, backorder support and product or category exclusions.
@@ -236,12 +227,12 @@ Two third party libraries used by the admin screens ship unmodified under the MI
 * New: Consent checkbox, invisible spam protection, one click unsubscribe, and WordPress personal data export and erase.
 * New: Dashboard, Subscribers and Products screens, a Waitlist column on the Products list and a My Waiting List page in My Account.
 * New: Setup wizard and the `[ddwcwl_waiting_list_template_shortcode]` shortcode.
+* New: AI assistants (MCP). Ask Claude, ChatGPT, Cursor, VS Code or any MCP client about your waitlists: the overview, waitlisted products, one product's waitlist per variation, subscribers and your settings, plus a Restock priorities report prompt.
+* New: Optional AI tools to send the back in stock emails for a restocked product or take a customer off a waitlist. They stay off until you allow them, and every change is logged under WooCommerce > Status > Logs.
+* New: DevDiggers Plugins > AI & MCP page. Connect Claude, ChatGPT, Claude Code, Codex, Cursor, VS Code or any MCP client by signing in and clicking Allow, with an on and off switch per plugin and per write tool, a Try panel and an activity log.
 * New: Compatible with HPOS and the cart and checkout blocks.
 
 == Upgrade Notice ==
-
-= 1.1.0 =
-Adds AI assistant (MCP) tools for your waitlists, the DevDiggers AI & MCP page and clearer dashboard figures.
 
 = 1.0.0 =
 First release of DevDiggers Waitlist for WooCommerce.
