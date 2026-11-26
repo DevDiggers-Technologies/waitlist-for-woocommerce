@@ -19,15 +19,16 @@ defined( 'ABSPATH' ) || exit();
 // phpcs:disable WordPress.NamingConventions.PrefixAllGlobals, WordPress.WP.GlobalVariablesOverride -- CLI test script run through wp eval-file.
 
 $sent = [];
+// Record at wp_mail, which core and SMTP plugins that replace wp_mail() (FluentSMTP) both run; short-circuit core sends.
 add_filter(
-	'pre_wp_mail',
-	function ( $result, $atts ) use ( &$sent ) {
+	'wp_mail',
+	function ( $atts ) use ( &$sent ) {
 		$sent[] = [ $atts['to'], $atts['subject'] ];
-		return true;
-	},
-	10,
-	2
+		return $atts;
+	}
 );
+add_filter( 'pre_wp_mail', '__return_true' );
+remove_all_filters( 'woocommerce_mail_callback' ); // A local mail catcher must not bypass wp_mail.
 
 $check = function ( $ok, $label ) {
 	echo ( $ok ? 'PASS ' : 'FAIL ' ) . $label . "\n";

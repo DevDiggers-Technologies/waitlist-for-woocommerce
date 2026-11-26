@@ -168,47 +168,53 @@ No. Pro uses the same subscribers table and settings, so everything carries over
 
 == External services ==
 
-The plugin itself sends no data to any outside service. Subscribers are stored in your WordPress database and emails go out through the WooCommerce mailer. It contains no licence checks, no update checks and no telemetry.
+Subscribers are stored in your WordPress database and emails go out through the WooCommerce mailer. The plugin has no licence checks, no update checks and no tracking. It connects to the outside services below only in the situations described, and none of them receives waitlist, order or customer data beyond what is listed.
 
 **1. Gravatar (avatar images)**
 
-* What it is: Gravatar, the avatar service operated by Automattic, used through WordPress core's `get_avatar_url()`.
-* What it is used for: Showing the logged in administrator's avatar in the plugin dashboard header. This is standard WordPress behaviour.
-* When data is sent: When the dashboard is viewed and avatars are enabled under **Settings > Discussion**. Turning avatars off there stops the requests.
-* What data is sent: A hash of the administrator's email address inside the image URL, plus the usual request data of the browser such as IP address and user agent.
-* Terms of Service: https://automattic.com/terms/
-* Privacy Policy: https://automattic.com/privacy/
+* What it is: Gravatar, the avatar service run by Automattic, used through WordPress core's `get_avatar_url()`.
+* What it is used for: Showing the administrator's avatar in the plugin dashboard header and each subscriber's avatar in the Recent Signups list on the plugin dashboard. This is standard WordPress behaviour.
+* When data is sent: When the plugin dashboard is viewed and avatars are turned on under **Settings > Discussion**. Turning avatars off there stops the requests.
+* What data is sent: A hash of the administrator's or subscriber's email address inside the image URL, plus the usual details of the administrator's browser request, such as IP address and user agent.
+* Terms of Service: https://gravatar.com/tos
+* Privacy Policy: https://gravatar.com/privacy
 
-The bundled DevDiggers framework, which draws the admin screens, connects to the two services below. Both run only inside the WordPress admin.
+The bundled DevDiggers framework, which draws the admin screens, can connect to the two DevDiggers services below. Both are off until an administrator asks for them, and both run only inside the WordPress admin.
 
-**2. DevDiggers extensions directory**
+**2. DevDiggers extensions list (opt in)**
 
 * What it is: A read only API on devdiggers.com that returns the public list of DevDiggers extensions.
-* What it is used for: Showing available DevDiggers extensions on the Extensions admin page.
-* When data is sent: Only when a logged in administrator opens the Extensions admin page. The response is cached for 24 hours.
-* What data is sent: A standard outbound HTTP request only, meaning your server's IP address and a plugin user agent string. No personal data and no store data are sent. The page also loads each listed extension's image from devdiggers.com in the administrator's browser.
+* What it is used for: Showing the list on the **DevDiggers Plugins > Extensions** admin page.
+* When data is sent: Only after an administrator clicks **Load extensions from devdiggers.com** on that page. Until then the page makes no request and shows a link to the list on devdiggers.com instead. The response is cached for a day, and **Stop loading it** at the bottom of the page turns the requests off again and clears the cache.
+* What data is sent: A standard request from your server, which reveals its IP address and a "DevDiggers Framework" user agent. Once the list is shown, the administrator's browser also loads each extension's image from devdiggers.com. No personal data and no store data are sent.
 * Endpoint: https://devdiggers.com/wp-json/ddwcs/v1/plugins
 
-**3. Newsletter subscription (optional)**
+**3. DevDiggers newsletter (opt in)**
 
 * What it is: A contact and newsletter endpoint on devdiggers.com.
 * What it is used for: Adding your email address to the DevDiggers newsletter, only if you choose to subscribe.
-* When data is sent: Only when an administrator submits the optional newsletter form in the plugin dashboard. Nothing is sent automatically.
+* When data is sent: Only when an administrator types an email address into the newsletter form on the **DevDiggers Plugins > Dashboard** page and clicks Subscribe. Nothing is sent automatically.
 * What data is sent: The email address you enter and your site URL.
 * Endpoint: https://devdiggers.com/?fluentcrm=1&route=contact
 
-The DevDiggers services are provided by DevDiggers. By using them you agree to the DevDiggers Terms and Conditions (https://devdiggers.com/terms-and-conditions/) and Privacy Policy (https://devdiggers.com/privacy-policy/).
+Both DevDiggers services are provided by DevDiggers under its Terms and Conditions (https://devdiggers.com/terms-and-conditions/) and Privacy Policy (https://devdiggers.com/privacy-policy/).
 
 == Source code and build tools ==
 
-The admin and storefront JavaScript and CSS in `assets/` are compiled from the human readable source in the `src/` folder, which ships with the plugin together with the build configuration.
+The admin and storefront JavaScript and CSS in `assets/` are compiled from the human readable source in the `src/` folder, which ships with the plugin. The full source, including the build configuration, is also published on GitHub:
+
+https://github.com/DevDiggers-Technologies/waitlist-for-woocommerce
 
 To build the assets from source:
 
 1. Run `npm install` to install the build dependencies listed in `package.json`.
 2. Run `npm run build` to compile the production assets into `assets/js` and `assets/css`.
 
-The build configuration is in `webpack.config.js` and `babel.config.js`. Two third party libraries used by the admin screens ship unmodified under the MIT licence inside `devdiggers-framework/assets/js/`: Chart.js (https://www.chartjs.org) and Select2 (https://select2.org).
+The build configuration is in `webpack.config.js` and `babel.config.js`.
+
+The admin screens share the bundled DevDiggers Framework. The source of its compiled files in `devdiggers-framework/assets/js` and `devdiggers-framework/assets/css` (framework, dashboard, dashboard analytics, setup wizard, review notice and the AI & MCP page) ships in `devdiggers-framework/src`, with its own `package.json`, `webpack.config.js` and `babel.config.js`. To rebuild them, run `npm install` and then `npm run build` inside the `devdiggers-framework` folder.
+
+Two third party libraries used by the admin screens ship unmodified under the MIT licence inside `devdiggers-framework/assets/js/`: Chart.js (https://www.chartjs.org) and Select2 (https://select2.org).
 
 == Changelog ==
 
