@@ -9,7 +9,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 8.0
 WC tested up to: 11.2
-Stable tag: 1.1.0
+Stable tag: 1.0.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -168,58 +168,55 @@ No. Pro uses the same subscribers table and settings, so everything carries over
 
 == External services ==
 
-The plugin itself sends no data to any outside service. Subscribers are stored in your WordPress database and emails go out through the WooCommerce mailer. It contains no licence checks, no update checks and no telemetry.
+Subscribers are stored in your WordPress database and emails go out through the WooCommerce mailer. The plugin has no licence checks, no update checks and no tracking. It connects to the outside services below only in the situations described, and none of them receives waitlist, order or customer data beyond what is listed.
 
 **1. Gravatar (avatar images)**
 
-* What it is: Gravatar, the avatar service operated by Automattic, used through WordPress core's `get_avatar_url()`.
-* What it is used for: Showing the logged in administrator's avatar in the plugin dashboard header. This is standard WordPress behaviour.
-* When data is sent: When the dashboard is viewed and avatars are enabled under **Settings > Discussion**. Turning avatars off there stops the requests.
-* What data is sent: A hash of the administrator's email address inside the image URL, plus the usual request data of the browser such as IP address and user agent.
-* Terms of Service: https://automattic.com/terms/
-* Privacy Policy: https://automattic.com/privacy/
+* What it is: Gravatar, the avatar service run by Automattic, used through WordPress core's `get_avatar_url()`.
+* What it is used for: Showing the administrator's avatar in the plugin dashboard header and each subscriber's avatar in the Recent Signups list on the plugin dashboard. This is standard WordPress behaviour.
+* When data is sent: When the plugin dashboard is viewed and avatars are turned on under **Settings > Discussion**. Turning avatars off there stops the requests.
+* What data is sent: A hash of the administrator's or subscriber's email address inside the image URL, plus the usual details of the administrator's browser request, such as IP address and user agent.
+* Terms of Service: https://gravatar.com/tos
+* Privacy Policy: https://gravatar.com/privacy
 
-The bundled DevDiggers framework, which draws the admin screens, connects to the two services below. Both run only inside the WordPress admin.
+The bundled DevDiggers framework, which draws the admin screens, can connect to the two DevDiggers services below. Both are off until an administrator asks for them, and both run only inside the WordPress admin.
 
-**2. DevDiggers extensions directory**
+**2. DevDiggers extensions list (opt in)**
 
 * What it is: A read only API on devdiggers.com that returns the public list of DevDiggers extensions.
-* What it is used for: Showing available DevDiggers extensions on the Extensions admin page.
-* When data is sent: Only when a logged in administrator opens the Extensions admin page. The response is cached for 24 hours.
-* What data is sent: A standard outbound HTTP request only, meaning your server's IP address and a plugin user agent string. No personal data and no store data are sent. The page also loads each listed extension's image from devdiggers.com in the administrator's browser.
+* What it is used for: Showing the list on the **DevDiggers Plugins > Extensions** admin page.
+* When data is sent: Only after an administrator clicks **Load extensions from devdiggers.com** on that page. Until then the page makes no request and shows a link to the list on devdiggers.com instead. The response is cached for a day, and **Stop loading it** at the bottom of the page turns the requests off again and clears the cache.
+* What data is sent: A standard request from your server, which reveals its IP address and a "DevDiggers Framework" user agent. Once the list is shown, the administrator's browser also loads each extension's image from devdiggers.com. No personal data and no store data are sent.
 * Endpoint: https://devdiggers.com/wp-json/ddwcs/v1/plugins
 
-**3. Newsletter subscription (optional)**
+**3. DevDiggers newsletter (opt in)**
 
 * What it is: A contact and newsletter endpoint on devdiggers.com.
 * What it is used for: Adding your email address to the DevDiggers newsletter, only if you choose to subscribe.
-* When data is sent: Only when an administrator submits the optional newsletter form in the plugin dashboard. Nothing is sent automatically.
+* When data is sent: Only when an administrator types an email address into the newsletter form on the **DevDiggers Plugins > Dashboard** page and clicks Subscribe. Nothing is sent automatically.
 * What data is sent: The email address you enter and your site URL.
 * Endpoint: https://devdiggers.com/?fluentcrm=1&route=contact
 
-The DevDiggers services are provided by DevDiggers. By using them you agree to the DevDiggers Terms and Conditions (https://devdiggers.com/terms-and-conditions/) and Privacy Policy (https://devdiggers.com/privacy-policy/).
+Both DevDiggers services are provided by DevDiggers under its Terms and Conditions (https://devdiggers.com/terms-and-conditions/) and Privacy Policy (https://devdiggers.com/privacy-policy/).
 
 == Source code and build tools ==
 
-The admin and storefront JavaScript and CSS in `assets/` are compiled from the human readable source in the `src/` folder, which ships with the plugin together with the build configuration.
+The admin and storefront JavaScript and CSS in `assets/` are compiled from the human readable source in the `src/` folder, which ships with the plugin. The full source, including the build configuration, is also published on GitHub:
+
+https://github.com/DevDiggers-Technologies/waitlist-for-woocommerce
 
 To build the assets from source:
 
 1. Run `npm install` to install the build dependencies listed in `package.json`.
 2. Run `npm run build` to compile the production assets into `assets/js` and `assets/css`.
 
-The build configuration is in `webpack.config.js` and `babel.config.js`. Two third party libraries used by the admin screens ship unmodified under the MIT licence inside `devdiggers-framework/assets/js/`: Chart.js (https://www.chartjs.org) and Select2 (https://select2.org).
+The build configuration is in `webpack.config.js` and `babel.config.js`.
+
+The admin screens share the bundled DevDiggers Framework. The human readable source of its compiled files in `devdiggers-framework/assets/js` and `devdiggers-framework/assets/css` (framework, dashboard, dashboard analytics, setup wizard, review notice and the AI & MCP page) is in the same GitHub repository under `devdiggers-framework/src`, with its own `package.json`, `webpack.config.js` and `babel.config.js`. To rebuild them, clone the repository, then run `npm install` and `npm run build` inside the `devdiggers-framework` folder.
+
+Two third party libraries used by the admin screens ship unmodified under the MIT licence inside `devdiggers-framework/assets/js/`: Chart.js (https://www.chartjs.org) and Select2 (https://select2.org).
 
 == Changelog ==
-
-= 1.1.0 =
-* New: AI assistants (MCP). Ask Claude, ChatGPT, Cursor, VS Code or any MCP client about your waitlists: the overview, waitlisted products, one product's waitlist per variation, subscribers and your settings, plus a Restock priorities report prompt.
-* New: Optional AI tools to send the back in stock emails for a restocked product or take a customer off a waitlist. They stay off until you allow them, and every change is logged under WooCommerce > Status > Logs.
-* New: DevDiggers Plugins > AI & MCP page. Connect Claude, ChatGPT, Claude Code, Codex, Cursor, VS Code or any MCP client by signing in and clicking Allow, with an on and off switch per plugin and per write tool, a Try panel and an activity log.
-* Improved: Dashboard cards show the real previous-period figure instead of a made-up 100% change when there was no earlier activity, and Waiting Now and Products in Demand say they count customers waiting right now.
-* Improved: Dashboard product lists match the other DevDiggers dashboards, with an image placeholder for products without a photo.
-* Improved: Updated the DevDiggers framework to 1.3.0. The title bar with Save stays visible on edit screens while you scroll on desktop, and admin charts and pickers keep working when a theme or plugin replaces the shared Select2 script.
-* Fixed: The Products and Subscribers lists no longer show a second row actions toggle on small screens.
 
 = 1.0.0 =
 * New: Waitlist form on out of stock simple products and each sold out variation, in classic and block themes.
@@ -230,12 +227,12 @@ The build configuration is in `webpack.config.js` and `babel.config.js`. Two thi
 * New: Consent checkbox, invisible spam protection, one click unsubscribe, and WordPress personal data export and erase.
 * New: Dashboard, Subscribers and Products screens, a Waitlist column on the Products list and a My Waiting List page in My Account.
 * New: Setup wizard and the `[ddwcwl_waiting_list_template_shortcode]` shortcode.
+* New: AI assistants (MCP). Ask Claude, ChatGPT, Cursor, VS Code or any MCP client about your waitlists: the overview, waitlisted products, one product's waitlist per variation, subscribers and your settings, plus a Restock priorities report prompt.
+* New: Optional AI tools to send the back in stock emails for a restocked product or take a customer off a waitlist. They stay off until you allow them, and every change is logged under WooCommerce > Status > Logs.
+* New: DevDiggers Plugins > AI & MCP page. Connect Claude, ChatGPT, Claude Code, Codex, Cursor, VS Code or any MCP client by signing in and clicking Allow, with an on and off switch per plugin and per write tool, a Try panel and an activity log.
 * New: Compatible with HPOS and the cart and checkout blocks.
 
 == Upgrade Notice ==
-
-= 1.1.0 =
-Adds AI assistant (MCP) tools for your waitlists, the DevDiggers AI & MCP page and clearer dashboard figures.
 
 = 1.0.0 =
 First release of DevDiggers Waitlist for WooCommerce.
